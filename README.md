@@ -1,8 +1,8 @@
 Art Wrap
 
-Game Play:
+Summary:
 
-In Art Wrap, you are an art handler in a poorly managed gallery who must race against time and pack artworks to the highest standard to be shipped out for international exhibitions. 
+In Art Wrap, you are an art handler in a chaotic gallery who must pack artworks for last-minute exhibitions so they can be shipped out just in time.
 
 Functionality & MVPs:
 
@@ -22,6 +22,9 @@ Wireframe:
 
 - Keys will include the three types of artwork (painting, framed drawing, sculpture), and the order of packaging materials that goes with each artwork type.
 - Each packaging material corresponds to the four arrow keys. They must be selected in the order listed in the keys.
+
+Technologies, Libraries:
+-This project uses canvas API, HTML, CSS, Javascript
 
 Implementation Timeline:
 - Friday Afternoon & Weekend: Set up webpack environment, sort out game logic, start to build up classes
