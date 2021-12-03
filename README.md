@@ -2,7 +2,7 @@
 
 # Summary:
 
-In Art Wrap, you are an art handler in a chaotic gallery who must pack artworks for last-minute exhibitions so they can be shipped out just in time.
+In Art Wrap, you are an art handler in a chaotic gallery who must pack artworks last-minute so they can be shipped out just in time for the next big show.
 
 # Functionality & MVPs:
 
