@@ -1,0 +1,25 @@
+{
+  "name": "art_wrap",
+  "version": "1.0.0",
+  "description": "Art Wrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonja-ng/art_wrap.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonja-ng/art_wrap/issues"
+  },
+  "homepage": "https://github.com/sonja-ng/art_wrap#readme",
+  "dependencies": {
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
