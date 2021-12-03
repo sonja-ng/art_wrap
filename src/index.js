@@ -1,12 +1,17 @@
-const Game = require('./game.js');
+import Example from './scripts/game';
 
 console.log("Webpack is working!")
 
-document.addEventListener("DOMContentLoaded", ()=> {
-    const canvas = document.getElementById('game-canvas');
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.querySelector("body")
+    const example = new Example(body)
+ });
 
-    const ctx = canvas.getContext('2d');
+// document.addEventListener("DOMContentLoaded", ()=> {
+//     const canvas = document.getElementById('game-canvas');
 
-    ctx.fillStyle = 'red';
-    ctx.fillRect( 0, 0, 1000, 1000)
-});
+//     const ctx = canvas.getContext('2d');
+
+//     ctx.fillStyle = 'red';
+//     ctx.fillRect( 0, 0, 1000, 1000)
+// });

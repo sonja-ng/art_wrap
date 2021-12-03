@@ -9,10 +9,11 @@ Functionality & MVPs:
 In this game, users will be able to:
 - start and restart game
 - use keyboard to select packaging materials to wrap each artwork
-- move on to next game after completing a level
-- after several levels, move on to new stage with new obstacles
+- move up to new levels
 - see a counter that lists number of levels completed
-- lose the game once time is up
+
+Bonus
+- after several levels, move on to new tier with new obstacles
 
 This project will also include:
 - a production README
@@ -24,7 +25,7 @@ Wireframe:
 - Each packaging material corresponds to the four arrow keys. They must be selected in the order listed in the keys.
 
 Technologies, Libraries:
--This project uses canvas API, HTML, CSS, Javascript
+-This project uses canvas API, HTML, CSS, Javascript, maybe 3js, webGL
 
 Implementation Timeline:
 - Friday Afternoon & Weekend: Set up webpack environment, sort out game logic, start to build up classes
