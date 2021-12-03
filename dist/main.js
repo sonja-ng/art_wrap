@@ -25,7 +25,7 @@ eval("function Game () {\n    console.log(\"this is the Game file!\")\n  }\n\nmo
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const Game = __webpack_require__(/*! ./game.js */ \"./src/game.js\");\n\n// console.log(\"Webpack is working!\")\n\ndocument.addEventListener(\"DOMContentLoaded\", ()=> {\n    \n});\n\n//# sourceURL=webpack://art_wrap/./src/index.js?");
+eval("const Game = __webpack_require__(/*! ./game.js */ \"./src/game.js\");\n\nconsole.log(\"Webpack is working!\")\n\ndocument.addEventListener(\"DOMContentLoaded\", ()=> {\n    const canvas = document.getElementById('game-canvas');\n\n    const ctx = canvas.getContext('2d');\n\n    ctx.fillStyle = 'red';\n    ctx.fillRect( 0, 0, 1000, 1000)\n});\n\n//# sourceURL=webpack://art_wrap/./src/index.js?");
 
 /***/ })
 
