@@ -54,3 +54,57 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+body {
+  width: 900px;
+  margin: 0 auto;
+  background: yellow;
+}
+
+header {
+  padding: 10px;
+  margin: 30px 0;
+}
+
+header h1 {
+  color: #3366ff;
+  font: 100% Helvetica, sans-serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+main {
+  margin: 10px 0;
+}
+
+#game-canvas {
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  height: 600px;
+  width: 900px;
+  position: relative;
+}
+
+.splash-intro {
+  width: 900px;
+  height: 600px;
+  background: #00ffdd;
+  display: block;
+  position: absolute;
+  z-index: 100;
+  border-radius: 20px;
+}
+
+.game-view {
+  width: 900px;
+  height: 600px;
+  background: #0936ff;
+  display: block;
+  position: absolute;
+  border-radius: 20px;
+}
+
+.hidden {
+  display: none;
+}

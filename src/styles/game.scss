@@ -1,0 +1,61 @@
+$color: #3366ff;
+$font-stack: Helvetica, sans-serif;
+
+body {
+  width: 900px;
+  margin: 0 auto;
+  background: yellow;
+}
+header {
+  padding: 10px;
+  margin: 30px 0;
+}
+
+header h1 {
+  color: $color;
+  font: 100% $font-stack;
+  font-size: 50px;
+  text-align: center;
+}
+
+main {
+  margin: 10px 0;
+}
+
+
+// .canvas-container {
+//   margin: 20px;
+  
+// }
+
+#game-canvas {
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  height: 600px;
+  width: 900px;
+  position: relative;
+}
+
+.splash-intro {
+  width: 900px;
+  height: 600px;
+  background: rgb(0, 255, 221);
+  display: block;
+  position: absolute;
+  z-index: 100;
+  border-radius: 20px;
+}
+
+.game-view {
+  width: 900px;
+  height: 600px;
+  background: rgb(9, 54, 255);
+  display: block;
+  position: absolute;
+  border-radius: 20px;
+}
+
+.hidden {
+  display: none;
+}

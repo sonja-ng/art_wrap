@@ -1,13 +1,10 @@
-class Example  {
-  constructor(ele) {
-      this.ele = ele
-      this.ele.innerHTML = "<h1>Its alive</h1>"
-      this.ele.addEventListener("click", this.handleClick.bind(this))
-  }
+class Game  {
+  constructor() {
 
-  handleClick() {
-      this.ele.children[0].innerText = "Ouch!"
   }
 }
 
-export default Example;
+export default Game;
+
+
+ 
