@@ -25,10 +25,6 @@ class Artwork {
             //change img;
         }
     }
-
-
-
-
 }
 
 export default Artwork;

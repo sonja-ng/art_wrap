@@ -9,7 +9,7 @@ class View  {
         this.game = game;
         this.start(); //added this.ctx to test drawing art from game class
         this.bindKeysHandle();
-        this.changeWrapper.bind(this);
+        // this.changeWrapper.bind(this);
     }
 
     removeIntro() {
@@ -32,21 +32,25 @@ class View  {
   
     }
 
-    bindKeysHandle(ctx){
+    bindKeysHandle(){
         //bind the four arrow keys to a specific value ('C', 'B', 'P', 'W')
         document.addEventListener("keydown", (e) => {
           const keyCode = e.code;
           if (keyCode === "ArrowUp") {
             this.game.currentKey = "B";
+            this.checkMatch();
             console.log("B");
           } else if (keyCode === "ArrowDown") {
             this.game.currentKey = "P";
+            this.checkMatch();
             console.log("P");
           } else if (keyCode === "ArrowLeft") {
             this.game.currentKey = "C";
+            this.checkMatch();
             console.log("C");
           } else if (keyCode === "ArrowRight") {
             this.game.currentKey = "W";
+            this.checkMatch();
             console.log("W");
           }
         }, false);
@@ -55,24 +59,14 @@ class View  {
           this.currentKey = "X";
         }, false);
       }
-    
       
-    
-      
-
-      addWrapper(ctx) {
-        this.ctx.beginPath();
-        this.ctx.fillStyle = 'green';
-        this.ctx.fillRect(100, 250, 180, 220);
-        this.ctx.closePath();
-      }
-
-      changeWrapper(ctx) {
+      checkMatch(){
           if (this.game.isCorrect()) {
-              this.addWrapper(ctx);
+              this.game.addWrapper(this.ctx);
+          } else {
+              console.log("wrong pick!");
           }
       }
-    
 
       drawWrapper(ctx) {
         this.ctx.fillStyle = 'green';
