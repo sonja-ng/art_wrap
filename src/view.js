@@ -2,26 +2,26 @@ class View  {
     constructor(game, el) {
         this.el = el;
         this.game = game;
-        this.setupIntro()
+        // this.setupIntro()
         this.bindEvents()
         this.setupGame()
     }
 
     setupGame() {
-        const newDiv = document.createElement("div");
-        newDiv.className = "game-view";
-        newDiv.innerText = "this is the game";
+        const canvas = this.el;
 
-        this.el.append(newDiv);
+        const ctx = canvas.getContext('2d');
+
+    
     }
 
-    setupIntro() {
-        const newDiv = document.createElement("div");
-        newDiv.className = "splash-intro";
-        newDiv.innerText = "Instruction";
+    // setupIntro() {
+    //     const newDiv = document.createElement("div");
+    //     newDiv.className = "splash-intro";
+    //     newDiv.innerText = "Instruction";
 
-        this.el.append(newDiv);
-    }
+    //     this.el.append(newDiv);
+    // }
 
     removeIntro() {
         const intro = document.querySelector(".splash-intro");

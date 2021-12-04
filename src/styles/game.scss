@@ -11,7 +11,7 @@ header {
   margin: 30px 0;
 }
 
-header h1 {
+h1 {
   color: $color;
   font: 100% $font-stack;
   font-size: 50px;
@@ -20,21 +20,15 @@ header h1 {
 
 main {
   margin: 10px 0;
+  position: relative;
 }
 
 
-// .canvas-container {
-//   margin: 20px;
-  
-// }
-
-#game-canvas {
-  border-radius: 10px;
+.game-canvas {
+  border-radius: 20px;
   text-align: center;
   vertical-align: middle;
-  height: 600px;
-  width: 900px;
-  position: relative;
+  background-color: white;
 }
 
 .splash-intro {
@@ -43,7 +37,6 @@ main {
   background: rgb(0, 255, 221);
   display: block;
   position: absolute;
-  z-index: 100;
   border-radius: 20px;
 }
 
