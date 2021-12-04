@@ -1,73 +1,72 @@
 import Artwork from './artwork';
-
-// Game.MOVES = {
-//   w:  
-//   a:
-//   s:
-//   d:
-// };
-
+console.log("Game file!")
 
 class Game  {
-  constructor(canvas) {
-    this.ctx = canvas.getContext('2d');
-    this.start()
-    this.artwork = [];
-    this.wrapper = [];
-}
+  constructor() {
+    this.artworks = [];
+    this.wrapper = ['C', 'B', 'P', 'W'];
+    this.currentKey = "X";
 
-  removeIntro() {
-      const intro = document.querySelector(".splash-intro");
-      intro.classList.add("hidden");
+    this.addArtwork()
   }
 
-  start() {
-      const that = this;
-      const intro = document.querySelector(".splash-intro");
-      document.addEventListener("keydown", (e) => {
-          const keyName = e.key;
-          const keyCode = e.code;
-          if (keyCode === 'Enter') {
-              this.removeIntro();
-          }
-      })
-      this.draw(this.ctx);
 
+  addArtwork(){
+    //add new Artwork() to this.artwork []
+    for (let i = 0; i < 3; i++) {
+      let art = new Artwork();
+      this.artworks.push(art);
+    }
   }
 
   draw(ctx) {
-    this.ctx.fillRect(100, 250, 180, 220);
-    this.ctx.strokeRect(400, 250, 150, 100);
-    this.ctx.fillRect(600, 250, 200, 220);
-  }
+    ctx.beginPath();
+    ctx.fillStyle = 'red';
+    ctx.fillRect(100, 250, 180, 220);
+    ctx.closePath();
 
   
+   
+  };
+
+  
+  isCorrect(currentKey){  //NEED TEST input should be the wrapper key from the user's input
+    let result = false;
+    if (this.currentKey === this.keys[0]) { //this.keys[0] refers to artwork's attribute
+        result = true;
+    } else if (this.currentKey !== this.keys[0] && this.wrapper.includes(this.currentKey)) {
+        throw new Error("wrong pick!");
+    }
+    return result;
+}
+
+
+  gameOver() {
+    //return boolean value if the timer is up
+    //show gameOver message
+  }
+
+  gameOverMessage(){
+    //message
+    //ask user if they want to play again
+  }
+
+  won(){
+    //if the status of all artworks in the array have been changed to "1"
+  }
+
+  winnerMessage(){
+
+
+  }
+
+
+  
+  
+
  
 
 }
 
 export default Game;
 
-
-
-
-// setupGame() {
-//     const canvas = this.el;
-
-//     const ctx = 
-
-
-// }
-
-// setupIntro() {
-//     const newDiv = document.createElement("div");
-//     newDiv.className = "splash-intro";
-//     newDiv.innerText = "Instruction";
-
-//     this.el.append(newDiv);
-// }
-// constructor(level) {
-//   this.level = level;
-//   this.artworks = new ArtworkQueue(this.level);
-//   this.currentArtwork = this.artworks.queue[0];
-// }

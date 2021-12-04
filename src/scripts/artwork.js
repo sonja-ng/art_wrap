@@ -1,43 +1,32 @@
-const KEYS = {
-    DRAWING: ['cardboard', 'bubble'],
-    PAINTING: ['paper', 'bubble'],
-    SCULPTURE: ['bubble', 'crate']
+const ARTKEYS = {
+    "drawing": ['C', 'B'],
+    "painting": ['P', 'B'],
+    "sculpture": ['B', 'W']
 };
 
 class Artwork {
-  constructor(num) {
-    this.num = num;
-    this.queue = this.populateQueue(this.num);
+  constructor() {
+    this.status = -1;  //artwork status: -1, 0, 1. to indicate their wrapping status
+    this.medium = Object.keys(ARTKEYS)[Math.floor(Math.random() * 3)];
+    this.keys = ARTKEYS[this.medium]; //return an array like ['B', 'W']
   }
-
   
-
-  populateQueue(n) {
-    const queue = [];
-    for (let i = 0; i < n; i++) {
-        queue.push('X');
+    updateStatus(){
+        this.status += 1;
+        this.keys.shift();
     }
 
-    return queue;
+    finishWrap() {  //when an artwork's is completely wrapped
+        return this.status === 1;
     }
 
-    correctKey() {
-
-    }
-
-    isCorrectWrap(input){
-        return input === this.correctKey();
-    }
-
-    addWrapper(){
-        if (isCorrectWrap()) {
-            this.queue[0] = "O";
+    changeImg() {
+        if (this.medium === "drawing" && this.status === 0){
+            //change img;
         }
     }
 
-    win() {
-        return this.queue.every(el => el === 'P');
-    }
+
 
 
 }
