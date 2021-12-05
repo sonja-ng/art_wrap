@@ -7,9 +7,7 @@ class View  {
     constructor(game, canvas) {
         this.ctx = canvas.getContext('2d');
         this.game = game;
-        this.start(); //added this.ctx to test drawing art from game class
-        
-        // this.changeWrapper.bind(this);
+        this.start(); 
     }
 
     removeIntro() {
@@ -71,7 +69,8 @@ class View  {
         }, false);
     
         document.addEventListener("keyup", (e) => {
-          this.currentKey = "X";
+          this.game.currentKey = "X";
+          console.log("X"); //need to fix this, it's not changing back to X
         }, false);
       }
       
@@ -80,13 +79,13 @@ class View  {
             //   debugger
               if (this.game.artwork[0].status === 0) {
                 this.game.addWrapper();
-                // this.game.artwork.shift();
                 //   this.game.addWrapper(this.ctx);
               } else if (this.game.artwork[0].status === 1) {
                 this.game.addSecondWrapper();
                 if (this.game.levelEnd()) {
-                    this.game.moveUpLevel();
-                    this.game.draw();
+                    // debugger
+                    setTimeout(this.game.moveUpLevel.bind(this.game), 450);
+                    // this.game.draw();
                     // this.game.moveUpLevel(this.ctx);
                     // this.drawArt();
                 }

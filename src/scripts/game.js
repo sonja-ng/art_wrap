@@ -25,6 +25,7 @@ class Game  {
     this.currentKey = "X";
     this.level = 0;
     this.addArtwork()
+  
   }
 
   addArtwork(){
@@ -75,10 +76,10 @@ class Game  {
     const li = document.querySelector("li");
     li.append(secondWrapper);
   }
-
   
   
-  isCorrect() {  //NEED TEST input should be the wrapper key from the user's input
+  isCorrect() { 
+   
     let currentArtwork = this.artwork[0];
     if (this.currentKey === currentArtwork.keys[0]) {
       currentArtwork.updateStatus();
@@ -110,10 +111,11 @@ class Game  {
     this.currentKey = "X";
     
     this.addArtwork();
+    this.draw();
   }
 
   gameOver() {
-    
+
     //return boolean value if the timer is up
     //show gameOver message
   }
