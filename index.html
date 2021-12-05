@@ -5,19 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Wrap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/main.css">
     <script src="./dist/main.js"></script>
 </head>
 <body>
-    <header><h1>Art Wrap</h1></header>
-    <main>
-        <div class ="splash-intro">
-            <h1>Instruction</h1>
+    <header><h1>Art Wrap</h1></header>        
+        <main>
+        <div class="splash-intro">
+            <h2>Instruction</h2>
+            <br>
+            <p>you are an art handler in a chaotic gallery who must pack up all the artworks 
+             in the last second so they can be shipped out just in time for the next big show.</p>
+             <p>Press Enter to Start</p>
+        </div>
+        <div class="countdown-timer"></div>
+        <div class="game-over">
+            <h1>Game Over</h1>
         </div>
         <div class="canvas-container">
+            <div class="test-img"></div>
         <canvas class="game-canvas" height="600" width="900"></canvas>
-        </div>
     </main>
+    </div>
     <footer></footer>
 </body>
 </html>

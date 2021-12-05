@@ -15,6 +15,9 @@ class View  {
     removeIntro() {
         const intro = document.querySelector(".splash-intro");
         intro.classList.add("hidden");
+
+        // const test = document.querySelector(".test-img");
+        // test.classList.remove("hidden");
     }
   
     start() {
@@ -26,18 +29,26 @@ class View  {
                 this.removeIntro();
                 this.bindKeysHandle();
                 console.log("Enter");
+                this.game.draw();
             }
         })
-        for (let i = 0; i < this.game.artwork.length; i++) {
-            this.game.draw(this.ctx);
-        }
         
-        this.drawWrapper(this.ctx);
+        
+        // this.drawArt(); CANVAS CODE
+        // this.drawWrapper(this.ctx); CANVAS CODE
   
     }
 
+    //CANVAS-SPECIFIC CODE
+    // drawArt() {
+    //     for (let i = 0; i < this.game.artwork.length; i++) {
+    //         this.game.draw(this.ctx);
+    //     }
+    // }
+
     bindKeysHandle(){
         //bind the four arrow keys to a specific value ('C', 'B', 'P', 'W')
+
         document.addEventListener("keydown", (e) => {
           const keyCode = e.code;
           if (keyCode === "ArrowUp") {
@@ -68,11 +79,20 @@ class View  {
           if (this.game.isCorrect()) {
             //   debugger
               if (this.game.artwork[0].status === 0) {
-                  this.game.addWrapper(this.ctx);
+                this.game.addWrapper();
+                // this.game.artwork.shift();
+                //   this.game.addWrapper(this.ctx);
               } else if (this.game.artwork[0].status === 1) {
-                this.game.addSecondWrapper(this.ctx);
+                this.game.addSecondWrapper();
+                if (this.game.levelEnd()) {
+                    this.game.moveUpLevel();
+                    this.game.draw();
+                    // this.game.moveUpLevel(this.ctx);
+                    // this.drawArt();
+                }
               }
           }
+          
       }
 
       drawWrapper(ctx) {

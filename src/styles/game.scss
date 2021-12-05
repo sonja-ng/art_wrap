@@ -1,5 +1,4 @@
-$color: #3366ff;
-$font-stack: Helvetica, sans-serif;
+$color: #118cff;
 
 body {
   width: 900px;
@@ -13,22 +12,49 @@ header {
 
 h1 {
   color: $color;
-  font: 100% $font-stack;
+  font-family: 'Bungee', cursive;
   font-size: 50px;
   text-align: center;
 }
 
-main {
-  margin: 10px 0;
-  position: relative;
+h2 {
+  color: $color;
+  font-family: 'Bungee', cursive;
+  font-size: 30px;
+  text-align: center;
 }
 
+p {
+  color: $color;
+  font-family: 'Bungee', cursive;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+main {
+  position: relative;
+  width: 900px;
+}
+
+.test-img {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+}
+
+.test-img ul {
+  display: flex;
+  justify-content: space-around;
+}
 
 .game-canvas {
   border-radius: 20px;
   text-align: center;
   vertical-align: middle;
-  background-color: white;
+  background-image: url(../src/scripts/assets/storage.png);
+  background-repeat: no-repeat;
+  background-size: 900px 600px;
 }
 
 .splash-intro {
@@ -40,6 +66,14 @@ main {
   border-radius: 20px;
 }
 
+.countdown-timer {
+  display: none;
+}
+
+.game-over {
+  display: none;
+}
+
 .game-view {
   width: 900px;
   height: 600px;
@@ -47,6 +81,31 @@ main {
   display: block;
   position: absolute;
   border-radius: 20px;
+}
+
+.sculpture {
+
+}
+
+.drawing {
+
+}
+
+.one {
+
+}
+
+.two {
+
+}
+
+.three {
+
+}
+
+.painting {
+
+
 }
 
 .hidden {

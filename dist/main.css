@@ -67,22 +67,50 @@ header {
 }
 
 h1 {
-  color: #3366ff;
-  font: 100% Helvetica, sans-serif;
+  color: #118cff;
+  font-family: "Bungee", cursive;
   font-size: 50px;
   text-align: center;
 }
 
+h2 {
+  color: #118cff;
+  font-family: "Bungee", cursive;
+  font-size: 30px;
+  text-align: center;
+}
+
+p {
+  color: #118cff;
+  font-family: "Bungee", cursive;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
 main {
-  margin: 10px 0;
   position: relative;
+  width: 900px;
+}
+
+.test-img {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+}
+
+.test-img ul {
+  display: flex;
+  justify-content: space-around;
 }
 
 .game-canvas {
   border-radius: 20px;
   text-align: center;
   vertical-align: middle;
-  background-color: white;
+  background-image: url(../src/scripts/assets/storage.png);
+  background-repeat: no-repeat;
+  background-size: 900px 600px;
 }
 
 .splash-intro {
@@ -92,6 +120,14 @@ main {
   display: block;
   position: absolute;
   border-radius: 20px;
+}
+
+.countdown-timer {
+  display: none;
+}
+
+.game-over {
+  display: none;
 }
 
 .game-view {
