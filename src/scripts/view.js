@@ -8,7 +8,7 @@ class View  {
         this.ctx = canvas.getContext('2d');
         this.game = game;
         this.start(); //added this.ctx to test drawing art from game class
-        this.bindKeysHandle();
+        
         // this.changeWrapper.bind(this);
     }
 
@@ -24,10 +24,14 @@ class View  {
             const keyCode = e.code;
             if (keyCode === 'Enter') {
                 this.removeIntro();
+                this.bindKeysHandle();
                 console.log("Enter");
             }
         })
-        this.game.draw(this.ctx);
+        for (let i = 0; i < this.game.artwork.length; i++) {
+            this.game.draw(this.ctx);
+        }
+        
         this.drawWrapper(this.ctx);
   
     }
@@ -62,9 +66,12 @@ class View  {
       
       checkMatch(){
           if (this.game.isCorrect()) {
-              this.game.addWrapper(this.ctx);
-          } else {
-              console.log("wrong pick!");
+            //   debugger
+              if (this.game.artwork[0].status === 0) {
+                  this.game.addWrapper(this.ctx);
+              } else if (this.game.artwork[0].status === 1) {
+                this.game.addSecondWrapper(this.ctx);
+              }
           }
       }
 
