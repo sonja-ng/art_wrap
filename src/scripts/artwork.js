@@ -16,12 +16,29 @@ class Artwork {
   
     updateStatus(){
         this.status += 1;
-        this.keys.shift();
     }
+
 
     finishWrap() {  //when an artwork's is completely wrapped
         return this.status === 1;
     }
+
 }
 
 export default Artwork;
+
+
+// addWrapper(){
+//   const art = document.querySelector(".one");
+//   art.src = this.firstWrappers[0];
+
+// }
+
+// addSecondWrapper(){
+//   const firstWrapper = document.querySelector(".first-wrapper");
+//   firstWrapper.classList.add("hidden");
+//   const secondWrapper = document.createElement("img");
+//   secondWrapper.src = this.secondWrappers[0];
+//   const li = document.querySelector("li");
+//   li.append(secondWrapper);
+// }

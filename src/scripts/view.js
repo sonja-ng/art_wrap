@@ -37,12 +37,6 @@ class View  {
   
     }
 
-    //CANVAS-SPECIFIC CODE
-    // drawArt() {
-    //     for (let i = 0; i < this.game.artwork.length; i++) {
-    //         this.game.draw(this.ctx);
-    //     }
-    // }
 
     bindKeysHandle(){
         //bind the four arrow keys to a specific value ('C', 'B', 'P', 'W')
@@ -52,36 +46,39 @@ class View  {
           if (keyCode === "ArrowUp") {
             this.game.currentKey = "B";
             this.checkMatch();
-            console.log("B");
+            console.log(`${this.game.currentKey}`);
           } else if (keyCode === "ArrowDown") {
             this.game.currentKey = "P";
             this.checkMatch();
-            console.log("P");
+            console.log(`${this.game.currentKey}`);
           } else if (keyCode === "ArrowLeft") {
             this.game.currentKey = "C";
             this.checkMatch();
-            console.log("C");
+            console.log(`${this.game.currentKey}`);
           } else if (keyCode === "ArrowRight") {
             this.game.currentKey = "W";
             this.checkMatch();
-            console.log("W");
+            console.log(`${this.game.currentKey}`);
           }
         }, false);
     
         document.addEventListener("keyup", (e) => {
           this.game.currentKey = "X";
-          console.log("X"); //need to fix this, it's not changing back to X
+          // console.log("X"); //need to fix this, it's not changing back to X
         }, false);
       }
       
       checkMatch(){
           if (this.game.isCorrect()) {
-            //   debugger
+              // debugger
               if (this.game.artwork[0].status === 0) {
                 this.game.addWrapper();
                 //   this.game.addWrapper(this.ctx);
               } else if (this.game.artwork[0].status === 1) {
                 this.game.addSecondWrapper();
+                console.log(`${this.game.artwork}`);
+                this.game.artwork.shift();
+                console.log(`${this.game.artwork}`);
                 if (this.game.levelEnd()) {
                     // debugger
                     setTimeout(this.game.moveUpLevel.bind(this.game), 450);
@@ -94,19 +91,26 @@ class View  {
           
       }
 
-      drawWrapper(ctx) {
-        this.ctx.fillStyle = 'green';
-        this.ctx.fillRect(100, 50, 80, 80);
-        this.ctx.fillStyle = 'yellow';
-        this.ctx.fillRect(200, 50, 80, 80);
-        this.ctx.fillStyle = 'orange';
-        this.ctx.fillRect(300, 50, 80, 80);
-        this.ctx.fillStyle = 'green';
-        this.ctx.fillRect(400, 50, 80, 80);
-      }
+      // drawWrapper(ctx) {
+      //   this.ctx.fillStyle = 'green';
+      //   this.ctx.fillRect(100, 50, 80, 80);
+      //   this.ctx.fillStyle = 'yellow';
+      //   this.ctx.fillRect(200, 50, 80, 80);
+      //   this.ctx.fillStyle = 'orange';
+      //   this.ctx.fillRect(300, 50, 80, 80);
+      //   this.ctx.fillStyle = 'green';
+      //   this.ctx.fillRect(400, 50, 80, 80);
+      // }
 
 
   }
   
   export default View;
   
+
+    //CANVAS-SPECIFIC CODE
+    // drawArt() {
+    //     for (let i = 0; i < this.game.artwork.length; i++) {
+    //         this.game.draw(this.ctx);
+    //     }
+    // }

@@ -37,16 +37,18 @@ main {
   width: 900px;
 }
 
-.test-img {
+.gallery {
   position: absolute;
   top: 200px;
   left: 100px;
 }
 
-.test-img ul {
+.gallery ul {
   display: flex;
   justify-content: space-around;
 }
+
+
 
 .game-canvas {
   border-radius: 20px;
@@ -91,7 +93,7 @@ main {
 
 }
 
-.one {
+.current {
 
 }
 

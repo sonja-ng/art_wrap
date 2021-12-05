@@ -29,20 +29,21 @@ class Game  {
   }
 
   addArtwork(){
-    //add new Artwork() to this.artwork []
-    // LEVEL[this.level]
+  
     for (let i = 0; i < LEVEL[this.level]; i++) {
       let art = new Artwork();
+      // debugger
       this.artwork.push(art);
       this.artworkMedium.push(art.medium);
       this.artworkSrc.push(art.picture);
       this.firstWrappers.push(art.firstWrapper);
       this.secondWrappers.push(art.secondWrapper);
+      // console.log(this.artwork);
     }
   }
 
   draw(){
-    const image = document.querySelector(".test-img");
+    const image = document.querySelector(".gallery");
     const ul = document.createElement("ul");
 
     for (let i = 0; i < this.artwork.length; i++) {
@@ -50,45 +51,63 @@ class Game  {
       const img = document.createElement("img");
       img.src = this.artworkSrc[i];
       img.classList.add(this.artworkMedium[i]);
-      img.classList.add(CSS[i]);
+      img.classList.add("next");
+      if (i === 0) {
+        img.classList.add("current");
+        img.classList.remove("next");
+      }
       li.append(img);
       ul.append(li);
     }
 
   image.append(ul);
   }
- 
+
   addWrapper(){
-    const art = document.querySelector(".one");
-    art.classList.add("hidden");
-    const wrapper = document.createElement("img");
-    wrapper.src = this.firstWrappers[0];
-    wrapper.classList.add("first-wrapper");
-    const li = document.querySelector("li");
-    li.append(wrapper);
+    const art = document.querySelector(".current");
+    art.src = this.firstWrappers[0];
+    this.firstWrappers.shift();
   }
 
   addSecondWrapper(){
-    const firstWrapper = document.querySelector(".first-wrapper");
-    firstWrapper.classList.add("hidden");
-    const secondWrapper = document.createElement("img");
-    secondWrapper.src = this.secondWrappers[0];
-    const li = document.querySelector("li");
-    li.append(secondWrapper);
+    const art = document.querySelector(".current");
+    art.src = this.secondWrappers[0];
+    art.classList.remove("current");
+    art.classList.add("done");
+    this.secondWrappers.shift();
+    if (this.secondWrappers.length > 0) {
+      const second = document.querySelectorAll(".next");
+      second[0].classList.add("current");
+      second[0].classList.remove("next");
+   }
   }
+
   
   
   isCorrect() { 
    
     let currentArtwork = this.artwork[0];
-    if (this.currentKey === currentArtwork.keys[0]) {
-      currentArtwork.updateStatus();
-      // console.log(`${currentArtwork.keys} and ${currentArtwork.status}`);
-      return true;
-    } else if (this.currentKey !== currentArtwork.keys[0] && this.wrapper.includes(this.currentKey)) {
-        // throw new Error("wrong pick!");
-        console.log("wrong pick from game file!");
-       return false;
+    // debugger
+    if (currentArtwork.status === -1) {
+      if (this.currentKey === currentArtwork.keys[0]) {
+        currentArtwork.updateStatus();
+        // console.log(`${currentArtwork.keys} and ${currentArtwork.status}`);
+        return true;
+      } else if (this.currentKey !== currentArtwork.keys[0] && this.wrapper.includes(this.currentKey)) {
+          // throw new Error("wrong pick!");
+          console.log("wrong pick from game file!");
+         return false;
+      }
+    } else if (currentArtwork.status === 0) {
+      if (this.currentKey === currentArtwork.keys[1]) {
+        currentArtwork.updateStatus();
+        // console.log(`${currentArtwork.keys} and ${currentArtwork.status}`);
+        return true;
+      } else if (this.currentKey !== currentArtwork.keys[1] && this.wrapper.includes(this.currentKey)) {
+          // throw new Error("wrong pick!");
+          console.log("wrong pick from game file!");
+         return false;
+      }
     }
 }
 
@@ -109,6 +128,22 @@ class Game  {
     this.firstWrappers = [];
     this.secondWrappers = [];
     this.currentKey = "X";
+    
+    this.addArtwork();
+    this.draw();
+    console.log(`${this.artwork[0]}`);
+  }
+
+  restart() {
+    const ul = document.querySelector("ul");
+    ul.remove();
+    this.artwork = [];
+    this.artworkMedium = [];
+    this.artworkSrc = [];
+    this.firstWrappers = [];
+    this.secondWrappers = [];
+    this.currentKey = "X";
+    this.level = 0;
     
     this.addArtwork();
     this.draw();
