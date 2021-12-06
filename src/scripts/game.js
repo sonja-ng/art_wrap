@@ -18,10 +18,10 @@ class Game  {
     this.secondWrappers = [];
     this.currentKey = "X";
     this.level = 0;
-    this.artworkPacked = 0;
+    this.score = 0;
     this.second = 5;
     this.addArtwork()
-    // this.gameStart = false;
+    this.artworkCounter = 0;
     this.timer = undefined;
   }
 
@@ -58,13 +58,29 @@ class Game  {
     }
 
   image.append(ul);
-  this.gameStart = true;
   console.log(this.level);
+
+  this.setUpScoreboard()
   }
+
+  setUpScoreboard() {
+    const counter = document.querySelector(".artwork-counter");
+    counter.classList.remove("hidden");
+    const scoreCounter = document.querySelector(".score");
+    scoreCounter.classList.remove("hidden");
+    scoreCounter.innerText = `Score: ${this.score}`;
+  }
+
+  removeScoreboard() {
+    const counter = document.querySelector(".artwork-counter");
+    counter.classList.add("hidden");
+    const scoreCounter = document.querySelector(".score");
+    scoreCounter.classList.add("hidden");
+  }
+  
 
   setUpTimer(){
     this.timer = setInterval(this.timerTick.bind(this), 1000);
-    
   }
 
   timerTick(){
@@ -93,11 +109,15 @@ class Game  {
   }
 
   addSecondWrapper(){
+    this.score += 1;
+    const scoreCounter = document.querySelector(".score");
+    scoreCounter.innerText = `Score: ${this.score}`;
+    console.log(this.score);
     const art = document.querySelector(".current");
     art.src = this.secondWrappers[0];
-    this.artworkPacked += 1;
     art.classList.remove("current");
     art.classList.add("done");
+    this.artworkCounter += 1;
     this.secondWrappers.shift();
     if (this.secondWrappers.length > 0) {
       const second = document.querySelectorAll(".next");
@@ -115,7 +135,6 @@ class Game  {
   }
   
   isCorrect() { 
-   
     let currentArtwork = this.artwork[0];
     // debugger
     if (currentArtwork.status === -1) {
@@ -189,8 +208,13 @@ class Game  {
     const gameOver = document.querySelector(".game-over");
     gameOver.classList.remove("hidden");
 
+    this.removeScoreboard();
+    // gameOver.innerText = `Your score: ${this.score}!`;
+
     const legend = document.querySelector(".legend");
     legend.classList.add("hidden");
+
+
 
     console.log("time's up!");
 
@@ -213,6 +237,9 @@ class Game  {
     winner.classList.remove("hidden");
     const legend = document.querySelector(".legend");
     legend.classList.add("hidden");
+    // winner.innerText = `Your score: ${this.score}!`;
+
+    this.removeScoreboard();
     console.log("You win!");
 
     document.addEventListener("keydown", (e) => {

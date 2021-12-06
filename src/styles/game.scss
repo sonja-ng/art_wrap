@@ -168,10 +168,6 @@ ul li {
   text-align: center;
 }
 
-.current {
-
-}
-
 .view {
   width: inherit;
 }
@@ -186,4 +182,28 @@ ul li {
 
 .hidden {
   display: none;
+}
+
+.artwork-counter {
+  width: 180px;
+  height: 50px;
+  background: white;
+  float: left;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.score {
+  font-family: 'Bungee', cursive;
+  font-size: 30px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  top: 10px;
+}
+
+.winner p {
+  font-color: yellow;
 }

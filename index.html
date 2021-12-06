@@ -24,7 +24,8 @@
             <div class = "center">
                 <div class="splash-intro">
                     <h1>Art Wrap</h1>
-                    <p>You are an art handler in a mega (chaotic) gallery who must pack up artworks in record time for the next blockbuster exhibition.</p>
+                    <p>You are an intern in a mega (chaotic) gallery and your first job is to pack artworks in record time for the next blockbuster exhibition.
+                    </p>
                     <p>press enter to continue</p>
                 </div>
                 <div class="instruction hidden">
@@ -34,17 +35,24 @@
                 </div>
                 <div class="countdown-timer hidden"></div>
                 <div class="game-over hidden">
-                    <h1>Time's Up! <br><br>Try again?</h1>
-                    <p>Press Enter to Restart</p>
+                    <h1>Time's Up!</h1>
+                    <div class ="lose-message"></div>
+                    <p>Try again?<br><br>Press Enter to Restart</p>
                 </div>
                 <div class="winner hidden">
-                    <h1>Well done!</h1>
+                    <h1>Well done! <br><br>
+                    But that was just a warm up, are you ready to hang some works?</h1>
+                    <div class ="win-message"></div>
                     <p>Play again</p>
                 </div>
                 <div class="gallery"></div>
                 <canvas class="game-canvas" height="600" width="900"></canvas>
                 </div>
-            <div class="right"></div>
+            <div class="right">
+                <div class="artwork-counter hidden">
+                    <div class="score hidden"></div>
+                </div>
+            </div>
         </main>
     <footer></footer>
 </body>
