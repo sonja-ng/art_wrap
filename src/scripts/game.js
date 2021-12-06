@@ -70,7 +70,7 @@ class Game  {
   timerTick(){
     const countdown = document.querySelector(".countdown-timer");
     countdown.classList.remove("hidden");
-    countdown.innerText = `${this.second}`;
+    countdown.innerText = `0${this.second}`;
     this.second -= 1;
     console.log(this.second);    
     if (this.second === -1) {
@@ -176,6 +176,9 @@ class Game  {
     this.currentKey = "X";
     this.level = 0;
     this.second = 5;
+
+    const legend = document.querySelector(".legend");
+    legend.classList.remove("hidden");
     
     this.addArtwork();
     this.draw();
@@ -185,6 +188,10 @@ class Game  {
   gameOverMessage(){
     const gameOver = document.querySelector(".game-over");
     gameOver.classList.remove("hidden");
+
+    const legend = document.querySelector(".legend");
+    legend.classList.add("hidden");
+
     console.log("time's up!");
 
     document.addEventListener("keydown", (e) => {
@@ -204,6 +211,8 @@ class Game  {
     ul.remove();
     const winner = document.querySelector(".winner");
     winner.classList.remove("hidden");
+    const legend = document.querySelector(".legend");
+    legend.classList.add("hidden");
     console.log("You win!");
 
     document.addEventListener("keydown", (e) => {
