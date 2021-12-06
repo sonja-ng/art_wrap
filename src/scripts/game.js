@@ -4,14 +4,8 @@ console.log("Game file!")
 const LEVEL = {
   0: 1,
   1: 3,
-  2: 4
-}
-
-const CSS = {
-  0: "one",
-  1: "two",
-  2: "three",
-  3: "four"
+  2: 4,
+  3: 5
 }
 
 class Game  {
@@ -24,8 +18,10 @@ class Game  {
     this.secondWrappers = [];
     this.currentKey = "X";
     this.level = 0;
+    this.second = 5;
     this.addArtwork()
-  
+    this.gameStart = false;
+    this.timer = undefined;
   }
 
   addArtwork(){
@@ -38,9 +34,9 @@ class Game  {
       this.artworkSrc.push(art.picture);
       this.firstWrappers.push(art.firstWrapper);
       this.secondWrappers.push(art.secondWrapper);
-      // console.log(this.artwork);
     }
   }
+
 
   draw(){
     const image = document.querySelector(".gallery");
@@ -61,6 +57,31 @@ class Game  {
     }
 
   image.append(ul);
+  this.gameStart = true;
+  }
+
+  setUpTimer(){
+    this.timer = setInterval(this.timerTick.bind(this), 1000);
+    
+  }
+
+  timerTick(){
+    const countdown = document.querySelector(".countdown-timer");
+    countdown.classList.remove("hidden");
+    countdown.innerText = `${this.second}`;
+    this.second -= 1;
+    console.log(this.second);    
+    if (this.second === -1) {
+      clearInterval(this.timer);
+      countdown.classList.add("hidden");
+      this.gameOverMessage();
+      const ul = document.querySelector("ul");
+      ul.remove();
+    } 
+  }
+
+  gameOver() {
+    return this.second === -1;
   }
 
   addWrapper(){
@@ -79,10 +100,15 @@ class Game  {
       const second = document.querySelectorAll(".next");
       second[0].classList.add("current");
       second[0].classList.remove("next");
-   }
+    } else if (this.secondWrappers.length === 0 && this.level === 3) {
+      setTimeout(this.winMessage.bind(this), 450);
+    }
   }
 
-  
+  gameWon() {
+    if (this.secondWrappers.length === 0 && this.level === 3) return true;
+    return false;
+  }
   
   isCorrect() { 
    
@@ -128,10 +154,10 @@ class Game  {
     this.firstWrappers = [];
     this.secondWrappers = [];
     this.currentKey = "X";
+    this.second = 5;
     
     this.addArtwork();
     this.draw();
-    console.log(`${this.artwork[0]}`);
   }
 
   restart() {
@@ -144,61 +170,31 @@ class Game  {
     this.secondWrappers = [];
     this.currentKey = "X";
     this.level = 0;
+    this.second = 5;
     
     this.addArtwork();
     this.draw();
   }
 
-  gameOver() {
-
-    //return boolean value if the timer is up
-    //show gameOver message
-  }
+ 
 
   gameOverMessage(){
+    const gameOver = document.querySelector(".game-over");
+    gameOver.classList.remove("hidden");
+    console.log("time's up!");
     //message
     //ask user if they want to play again
   }
 
-  won(){
-    //if the status of all artworkKeys in the array have been changed to "1"
-  }
-
-  winnerMessage(){
-
+  winMessage(){
+    const ul = document.querySelector("ul");
+    ul.remove();
+    clearInterval(this.timer);
+    const winner = document.querySelector(".winner");
+    winner.classList.remove("hidden");
+    console.log("You win!");
   }
 }
 
 export default Game;
 
-
-
-//CANVAS-SPECIFIC CODE
-  // draw(ctx) {
-  //   const a = new Image();
-  //   a.onload = function() {
-  //         ctx.drawImage(a, 100, 250, 220, 147);
-  //       }
-  //   a.src = "./src/scripts/assets/monet1.png";
-  // };
-
-
- //CANVAS CODE
-  // addWrapper(ctx) {
-  //   const paper = new Image();
-  //   paper.onload = function() {
-  //     ctx.drawImage(paper, 100, 250, 220, 147);
-  //   }
-  //     paper.src = "./src/scripts/assets/monet2.png";
-  // }
-
-
-  //CANVAS CODE
-  // addSecondWrapper(ctx) {
-
-  //   const bubble = new Image();
-  //   bubble.onload = function() {
-  //     ctx.drawImage(bubble, 100, 250, 220, 147);
-  //   }
-  //     bubble.src = "./src/scripts/assets/monet3.png"
-  // }

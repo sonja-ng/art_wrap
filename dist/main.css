@@ -85,7 +85,7 @@ p {
   font-family: "Bungee", cursive;
   font-size: 20px;
   text-align: center;
-  vertical-align: middle;
+  line-height: 2;
 }
 
 main {
@@ -95,13 +95,25 @@ main {
 
 .gallery {
   position: absolute;
-  top: 200px;
-  left: 100px;
+  height: 600px;
+  width: 900px;
+  top: 0px;
+  left: 0px;
 }
 
 .gallery ul {
   display: flex;
   justify-content: space-around;
+  position: absolute;
+  bottom: 100px;
+  width: inherit;
+}
+
+ul li {
+  width: 250px;
+  height: 250px;
+  display: block;
+  text-align: center;
 }
 
 .game-canvas {
@@ -117,17 +129,68 @@ main {
   width: 900px;
   height: 600px;
   background: #00ffdd;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   position: absolute;
   border-radius: 20px;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.winner {
+  width: 900px;
+  height: 600px;
+  background: #fc6bbb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  border-radius: 20px;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.winner h1 {
+  color: yellow;
+  font-family: "Bungee", cursive;
+  font-size: 50px;
+  text-align: center;
 }
 
 .countdown-timer {
-  display: none;
+  font-size: 40px;
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  left: 800px;
+  top: 20px;
+  border-radius: 10px;
+  font-family: "Bungee", cursive;
+  background: white;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .game-over {
-  display: none;
+  width: 900px;
+  height: 600px;
+  background: #00bcf5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  border-radius: 20px;
+  padding: 0 40px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.game-over h1 {
+  color: yellow;
+  font-family: "Bungee", cursive;
+  font-size: 50px;
+  text-align: center;
 }
 
 .game-view {

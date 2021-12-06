@@ -7,34 +7,30 @@ class View  {
     constructor(game, canvas) {
         this.ctx = canvas.getContext('2d');
         this.game = game;
-        this.start(); 
+        this.start();
     }
 
     removeIntro() {
         const intro = document.querySelector(".splash-intro");
         intro.classList.add("hidden");
 
-        // const test = document.querySelector(".test-img");
-        // test.classList.remove("hidden");
+        const over = document.querySelector(".game-over");
+        over.classList.add("hidden");
     }
   
     start() {
-        const intro = document.querySelector(".splash-intro");
         document.addEventListener("keydown", (e) => {
+            e.preventDefault();
             const keyName = e.key;
             const keyCode = e.code;
-            if (keyCode === 'Enter') {
+            if (this.game.level === 0 && keyCode === 'Enter') {
                 this.removeIntro();
                 this.bindKeysHandle();
                 console.log("Enter");
+                this.game.setUpTimer();
                 this.game.draw();
             }
-        })
-        
-        
-        // this.drawArt(); CANVAS CODE
-        // this.drawWrapper(this.ctx); CANVAS CODE
-  
+        });
     }
 
 
@@ -43,6 +39,7 @@ class View  {
 
         document.addEventListener("keydown", (e) => {
           const keyCode = e.code;
+          e.preventDefault();
           if (keyCode === "ArrowUp") {
             this.game.currentKey = "B";
             this.checkMatch();
@@ -73,22 +70,17 @@ class View  {
               // debugger
               if (this.game.artwork[0].status === 0) {
                 this.game.addWrapper();
-                //   this.game.addWrapper(this.ctx);
               } else if (this.game.artwork[0].status === 1) {
                 this.game.addSecondWrapper();
-                console.log(`${this.game.artwork}`);
+                // console.log(`${this.game.artwork}`);
                 this.game.artwork.shift();
-                console.log(`${this.game.artwork}`);
+                 // console.log(`${this.game.artwork}`);
                 if (this.game.levelEnd()) {
                     // debugger
                     setTimeout(this.game.moveUpLevel.bind(this.game), 450);
-                    // this.game.draw();
-                    // this.game.moveUpLevel(this.ctx);
-                    // this.drawArt();
-                }
+                } 
               }
-          }
-          
+          } 
       }
 
       // drawWrapper(ctx) {
@@ -106,11 +98,3 @@ class View  {
   }
   
   export default View;
-  
-
-    //CANVAS-SPECIFIC CODE
-    // drawArt() {
-    //     for (let i = 0; i < this.game.artwork.length; i++) {
-    //         this.game.draw(this.ctx);
-    //     }
-    // }

@@ -1,7 +1,7 @@
 const ARTKEYS = {
-    "drawing": [['C', 'B'], "./src/scripts/assets/target1.png", "./src/scripts/assets/temp-art2.png", "./src/scripts/assets/temp-art3.png" ],
+    "drawing": [['C', 'B'], "./src/scripts/assets/target1.png", "./src/scripts/assets/target2.png", "./src/scripts/assets/target3.png" ],
     "painting": [['P', 'B'], "./src/scripts/assets/monet1.png", "./src/scripts/assets/monet2.png", "./src/scripts/assets/monet3.png" ],
-    "sculpture": [['B', 'W'], "./src/scripts/assets/zhanwang1.png", "./src/scripts/assets/temp-art3.png", "./src/scripts/assets/temp-art2.png"]
+    "sculpture": [['B', 'W'], "./src/scripts/assets/zhanwang1.png", "./src/scripts/assets/zw2.png", "./src/scripts/assets/zw3.png"]
 };
 
 class Artwork {
