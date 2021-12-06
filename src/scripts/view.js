@@ -14,8 +14,7 @@ class View  {
         const intro = document.querySelector(".splash-intro");
         intro.classList.add("hidden");
 
-        const over = document.querySelector(".game-over");
-        over.classList.add("hidden");
+        
     }
   
     start() {

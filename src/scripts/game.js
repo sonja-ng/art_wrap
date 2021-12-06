@@ -18,9 +18,10 @@ class Game  {
     this.secondWrappers = [];
     this.currentKey = "X";
     this.level = 0;
+    this.artworkPacked = 0;
     this.second = 5;
     this.addArtwork()
-    this.gameStart = false;
+    // this.gameStart = false;
     this.timer = undefined;
   }
 
@@ -58,6 +59,7 @@ class Game  {
 
   image.append(ul);
   this.gameStart = true;
+  console.log(this.level);
   }
 
   setUpTimer(){
@@ -93,6 +95,7 @@ class Game  {
   addSecondWrapper(){
     const art = document.querySelector(".current");
     art.src = this.secondWrappers[0];
+    this.artworkPacked += 1;
     art.classList.remove("current");
     art.classList.add("done");
     this.secondWrappers.shift();
@@ -101,6 +104,7 @@ class Game  {
       second[0].classList.add("current");
       second[0].classList.remove("next");
     } else if (this.secondWrappers.length === 0 && this.level === 3) {
+      clearInterval(this.timer);
       setTimeout(this.winMessage.bind(this), 450);
     }
   }
@@ -138,7 +142,7 @@ class Game  {
 }
 
   levelEnd() {
-    if (this.artwork.every(artwork => artwork.finishWrap())) {
+    if (this.level < 3 && this.artwork.every(artwork => artwork.finishWrap())) {
       this.level += 1;
       return true;
     };
@@ -158,11 +162,12 @@ class Game  {
     
     this.addArtwork();
     this.draw();
+    console.log(this.level);
   }
 
   restart() {
     const ul = document.querySelector("ul");
-    ul.remove();
+    if (ul) ul.remove();
     this.artwork = [];
     this.artworkMedium = [];
     this.artworkSrc = [];
@@ -174,25 +179,43 @@ class Game  {
     
     this.addArtwork();
     this.draw();
+    this.setUpTimer();
   }
-
- 
 
   gameOverMessage(){
     const gameOver = document.querySelector(".game-over");
     gameOver.classList.remove("hidden");
     console.log("time's up!");
-    //message
-    //ask user if they want to play again
+
+    document.addEventListener("keydown", (e) => {
+      e.preventDefault();
+      const keyName = e.key;
+      const keyCode = e.code;
+      if (keyCode === 'Enter') {
+        const over = document.querySelector(".game-over");
+        over.classList.add("hidden");
+          this.restart();
+      }
+    });
   }
 
   winMessage(){
     const ul = document.querySelector("ul");
     ul.remove();
-    clearInterval(this.timer);
     const winner = document.querySelector(".winner");
     winner.classList.remove("hidden");
     console.log("You win!");
+
+    document.addEventListener("keydown", (e) => {
+      e.preventDefault();
+      const keyName = e.key;
+      const keyCode = e.code;
+      if (keyCode === 'Enter') {
+        const winner = document.querySelector(".winner");
+        winner.classList.add("hidden");
+          this.restart();
+      }
+    });
   }
 }
 
