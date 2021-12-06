@@ -23,6 +23,7 @@ class Game  {
     this.addArtwork()
     this.artworkCounter = 0;
     this.timer = undefined;
+    this.fresh = true;
   }
 
   addArtwork(){
@@ -58,9 +59,14 @@ class Game  {
     }
 
   image.append(ul);
+  const icons = document.querySelector(".icons");
+  icons.classList.remove("hidden");
+
   console.log(this.level);
 
-  this.setUpScoreboard()
+  this.setUpScoreboard();
+  this.fresh = false;
+  
   }
 
   setUpScoreboard() {
@@ -208,6 +214,9 @@ class Game  {
     const gameOver = document.querySelector(".game-over");
     gameOver.classList.remove("hidden");
 
+    const icons = document.querySelector(".icons");
+    icons.classList.add("hidden");
+
     this.removeScoreboard();
     // gameOver.innerText = `Your score: ${this.score}!`;
 
@@ -233,6 +242,10 @@ class Game  {
   winMessage(){
     const ul = document.querySelector("ul");
     ul.remove();
+
+    const icons = document.querySelector(".icons");
+    icons.classList.add("hidden");
+
     const winner = document.querySelector(".winner");
     winner.classList.remove("hidden");
     const legend = document.querySelector(".legend");

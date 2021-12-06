@@ -8,10 +8,10 @@ class View  {
         this.ctx = canvas.getContext('2d');
         this.game = game;
         this.start();
-        this.drawCardboard(this.ctx);
-        this.drawCrate(this.ctx);
-        this.drawBubble(this.ctx);
-        this.drawPaper(this.ctx);
+        // this.drawCardboard(this.ctx);
+        // this.drawCrate(this.ctx);
+        // this.drawBubble(this.ctx);
+        // this.drawPaper(this.ctx);
     }
 
     removeIntro() {
@@ -30,12 +30,12 @@ class View  {
           e.preventDefault();
           const keyName = e.key;
           const keyCode = e.code;
-          if (this.game.level === 0 && keyCode === 'Enter') {
+          if (this.game.fresh === true && keyCode === 'Enter') {
             instruction.classList.add("hidden");
             leftCanvas.classList.remove("hidden");  
             this.bindKeysHandle();
               console.log("Enter");
-              // this.game.setUpTimer();
+              this.game.setUpTimer();
               this.game.draw();
           }
       });
@@ -101,44 +101,44 @@ class View  {
           } 
       }
 
-      drawCardboard(ctx) {
-        let w = 80;
-        let h = 80;
+      // drawCardboard(ctx) {
+      //   let w = 80;
+      //   let h = 80;
 
-        this.ctx.fillStyle = 'green';
-        this.ctx.fillRect(50, 20, w, h);
-      }
+      //   this.ctx.fillStyle = 'green';
+      //   this.ctx.fillRect(50, 20, w, h);
+      // }
 
-      drawPaper(ctx){
-        let w = 80;
-        let h = 80;
+      // drawPaper(ctx){
+      //   let w = 80;
+      //   let h = 80;
 
-        this.ctx.fillStyle = 'yellow';
-        this.ctx.fillRect(150, 20, w, h);
-      }
+      //   this.ctx.fillStyle = 'yellow';
+      //   this.ctx.fillRect(150, 20, w, h);
+      // }
 
-      drawBubble(ctx){
-        let w = 80;
-        let h = 80;
+      // drawBubble(ctx){
+      //   let w = 80;
+      //   let h = 80;
 
-        this.ctx.fillStyle = 'orange';
-        this.ctx.fillRect(250, 20, w, h);
-      }
+      //   this.ctx.fillStyle = 'orange';
+      //   this.ctx.fillRect(250, 20, w, h);
+      // }
 
-      drawCrate(ctx){
-        let w = 80;
-        let h = 80;
+      // drawCrate(ctx){
+      //   let w = 80;
+      //   let h = 80;
 
-        this.ctx.fillStyle = 'blue';
-        this.ctx.fillRect(350, 20, w, h);
-      }
+      //   this.ctx.fillStyle = 'blue';
+      //   this.ctx.fillRect(350, 20, w, h);
+      // }
 
-      animate() {
-        let cardboard = false;
-        let bubble = false;
-        let crate = false;
-        let paper = false;
-      }
+      // animate() {
+      //   let cardboard = false;
+      //   let bubble = false;
+      //   let crate = false;
+      //   let paper = false;
+      // }
       
 
 

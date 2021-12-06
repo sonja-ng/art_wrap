@@ -115,6 +115,7 @@ ul li {
   height: 250px;
   display: block;
   text-align: center;
+  line-height: 250px;
 }
 
 .game-canvas {
@@ -222,6 +223,18 @@ ul li {
   text-align: center;
 }
 
+.icons {
+  position: absolute;
+  display: flex;
+  top: 20px;
+  left: 50px;
+  width: 380px;
+  height: 90px;
+  justify-content: space-around;
+  background: white;
+  border-radius: 5px;
+}
+
 .view {
   width: inherit;
 }
@@ -236,6 +249,12 @@ ul li {
 
 .hidden {
   display: none;
+}
+
+.current {
+  outline: 5px dashed white;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .artwork-counter {
@@ -260,4 +279,16 @@ ul li {
 
 .winner p {
   font-color: yellow;
+}
+
+.drawing {
+  padding: 10px;
+}
+
+.sculpture {
+  padding: 10px;
+}
+
+.painting {
+  padding: 10px;
 }
