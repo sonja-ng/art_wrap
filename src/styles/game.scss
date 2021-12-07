@@ -84,7 +84,8 @@ ul li {
   top: 25px;
   border-radius: 5px;
   float: right;
-  margin-right: 30px
+  margin-right: 30px;
+  width: 200px;
 }
 
 .splash-intro {
@@ -106,6 +107,27 @@ ul li {
   border-radius: 10px;
 }
 
+.instruction-inner {
+  display: flex;
+  height: 412px;
+}
+
+.key-img {
+  width: 300px;
+  height: 412px;
+  border-radius: 10px;
+  background:rgb(0, 126, 165);
+  margin-left: 10px;
+}
+
+.legend-img {
+  width: 550px;
+  background: #d5ffd6;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-left: 20px;
+}
 .instruction {
   width: 900px;
   height: 600px;
@@ -115,7 +137,6 @@ ul li {
   justify-content: space-evenly;
   position: absolute;
   border-radius: 10px;
-  padding: 0 40px;
   box-sizing: border-box;
 }
 
@@ -183,7 +204,7 @@ ul li {
   width: 410px;
   height: 90px;
   justify-content: space-around;
-  background: white;
+  background: rgb(199, 247, 253);
   border-radius: 5px;
 }
 

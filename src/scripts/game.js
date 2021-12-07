@@ -200,6 +200,7 @@ class Game  {
     this.secondWrappers = [];
     this.currentKey = "X";
     this.level = 0;
+    this.score = 0;
     this.second = 5;
 
     const legend = document.querySelector(".legend");
@@ -207,7 +208,7 @@ class Game  {
     
     this.addArtwork();
     this.draw();
-    // this.setUpTimer();
+    this.setUpTimer();
   }
 
   gameOverMessage(){

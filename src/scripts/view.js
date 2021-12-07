@@ -35,7 +35,7 @@ class View  {
             leftCanvas.classList.remove("hidden");  
             this.bindKeysHandle();
               console.log("Enter");
-              // this.game.setUpTimer();
+              this.game.setUpTimer();
               this.game.draw();
           }
       });
@@ -100,49 +100,6 @@ class View  {
               }
           } 
       }
-
-      // drawCardboard(ctx) {
-      //   let w = 80;
-      //   let h = 80;
-
-      //   this.ctx.fillStyle = 'green';
-      //   this.ctx.fillRect(50, 20, w, h);
-      // }
-
-      // drawPaper(ctx){
-      //   let w = 80;
-      //   let h = 80;
-
-      //   this.ctx.fillStyle = 'yellow';
-      //   this.ctx.fillRect(150, 20, w, h);
-      // }
-
-      // drawBubble(ctx){
-      //   let w = 80;
-      //   let h = 80;
-
-      //   this.ctx.fillStyle = 'orange';
-      //   this.ctx.fillRect(250, 20, w, h);
-      // }
-
-      // drawCrate(ctx){
-      //   let w = 80;
-      //   let h = 80;
-
-      //   this.ctx.fillStyle = 'blue';
-      //   this.ctx.fillRect(350, 20, w, h);
-      // }
-
-      // animate() {
-      //   let cardboard = false;
-      //   let bubble = false;
-      //   let crate = false;
-      //   let paper = false;
-      // }
-      
-
-
-
   }
   
   export default View;
