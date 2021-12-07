@@ -78,20 +78,20 @@ ul li {
 }
 
 .legend {
-  background-color: rgb(255, 118, 193);
+  background-image: url(../src/scripts/assets/in-gamekey.jpg);
+  background-repeat: no-repeat;
   position: relative;
   right: 0px;
   top: 25px;
   border-radius: 5px;
   float: right;
-  margin-right: 30px;
-  width: 200px;
+  margin-right: 10px;
 }
 
 .splash-intro {
   width: 900px;
   height: 600px;
-  background: rgb(0, 255, 221);
+  background: rgb(161, 255, 247);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -100,6 +100,8 @@ ul li {
   padding: 0 40px;
   box-sizing: border-box;
 }
+
+
 
 .intro {
   width: 800px;
@@ -144,7 +146,7 @@ ul li {
 .winner {
   width: 900px;
   height: 600px;
-  background: rgb(255, 131, 199);
+  background: rgb(253, 143, 204);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -158,21 +160,6 @@ ul li {
   color: yellow;
   font-family: 'Bungee', cursive;
   font-size: 50px;
-  text-align: center;
-}
-
-
-.countdown-timer {
-  font-size: 40px;
-  position: absolute;
-  width: 60px;
-  height: 40px;
-  left: 800px;
-  top: 20px;
-  border-radius: 10px;
-  font-family: 'Bungee', cursive;
-  background: white;
-  vertical-align: middle;
   text-align: center;
 }
 
@@ -201,19 +188,23 @@ ul li {
   position: absolute;
   display: flex;
   top: 20px;
-  left: 50px;
-  width: 410px;
-  height: 90px;
+  left: 20px;
+  width: 350px;
+  height: 113px;
   justify-content: space-around;
-  background: rgb(199, 247, 253);
+  background: rgb(222, 255, 251);
+  border: 5px solid rgb(255, 255, 151);
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .wrapper {
-  height: 80px;
-  line-height: 80px;
-  margin: 5px;
+  height: 100px;
+  line-height: 100px;
+}
 
+.selected {
+  border: 1px solid black;
 }
 
 .view {
@@ -245,8 +236,23 @@ ul li {
   float: left;
   border-radius: 5px;
   box-sizing: border-box;
-  margin-left: 30px;
-  margin-top: 20px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.countdown-timer {
+  font-size: 40px;
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  right: 20px;
+  top: 80px;
+  border-radius: 5px;
+  font-family: 'Bungee', cursive;
+  background: white;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .score {

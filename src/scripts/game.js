@@ -74,7 +74,13 @@ class Game  {
     counter.classList.remove("hidden");
     const scoreCounter = document.querySelector(".score");
     scoreCounter.classList.remove("hidden");
-    scoreCounter.innerText = `Score: ${this.score}`;
+    if (this.score === 0) {
+      scoreCounter.innerText = `Point: ${this.score}`;
+    } else {
+      scoreCounter.innerText = `Points: ${this.score}`;
+    }
+    
+    
   }
 
   removeScoreboard() {
@@ -117,7 +123,7 @@ class Game  {
   addSecondWrapper(){
     this.score += 1;
     const scoreCounter = document.querySelector(".score");
-    scoreCounter.innerText = `Score: ${this.score}`;
+    scoreCounter.innerText = `Points: ${this.score}`;
     console.log(this.score);
     const art = document.querySelector(".current");
     art.src = this.secondWrappers[0];
@@ -208,7 +214,7 @@ class Game  {
     
     this.addArtwork();
     this.draw();
-    this.setUpTimer();
+    // this.setUpTimer();
   }
 
   gameOverMessage(){
@@ -256,16 +262,6 @@ class Game  {
     this.removeScoreboard();
     console.log("You win!");
 
-    document.addEventListener("keydown", (e) => {
-      e.preventDefault();
-      const keyName = e.key;
-      const keyCode = e.code;
-      if (keyCode === 'Enter') {
-        const winner = document.querySelector(".winner");
-        winner.classList.add("hidden");
-          this.restart();
-      }
-    });
   }
 }
 

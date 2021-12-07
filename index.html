@@ -19,7 +19,7 @@
     <header><h1 class="title-header hidden">Art Wrap</h1></header>        
         <main>
             <div class="left">
-                <canvas class="legend hidden" width="250" height="550"></canvas>
+                <canvas class="legend hidden" width="250" height="550"><img src="../art_wrap/src/scripts/assets/in-gamekey.jpg"></canvas>
             </div>
             <div class = "center">
                 <div class="splash-intro">
@@ -27,7 +27,7 @@
                     <div class="intro">
                     <p>You are an intern in a mega (chaotic) gallery and your first job is to pack artworks in record time for the next blockbuster exhibition.
                     </p></div>
-                    <p>press enter to continue</p>
+                    <p>Press Enter to Continue</p>
                 </div>
                 <div class="instruction hidden">
                     
@@ -38,13 +38,18 @@
                     <img src="../art_wrap/src/scripts/assets/legend.jpg"></div>
                     <div class="key-img"><img src="../art_wrap/src/scripts/assets/key-img.jpg"></div>
                     </div>
-                    <p>press enter to start</p>
+                    <p>Press Enter to Start</p>
                 </div>
                 <div class="countdown-timer hidden"></div>
+                <div class="artwork-counter hidden">
+                    <div class="score hidden"></div>
+                </div> 
                 <div class="game-over hidden">
                     <h1>Time's Up!</h1>
+                    <div class="intro">
+                        <p>No sweat, there's always another last-minute exhibition coming up.</p></div>
                     <div class ="lose-message"></div>
-                    <p>Try again?<br><br>press Enter to Restart</p>
+                    <p>Press Enter to Restart</p>
                 </div>
                 <div class="winner hidden">
                     <h1>Well done!</h1>
@@ -54,18 +59,18 @@
                     <p>Level Two Coming Soon</p>
                 </div>
                 <div class="icons hidden">
-                    <div class="wrapper"><img src="../art_wrap/src/scripts/assets/cardboard.png"></div>
-                    <div class="wrapper"><img src="../art_wrap/src/scripts/assets/paper.png"></div>
-                    <div class="wrapper"><img src="../art_wrap/src/scripts/assets/bubblewrap.png"></div>
-                    <div class="wrapper"><img src="../art_wrap/src/scripts/assets/crate.png"></div>
+                    <div class="wrapper cardboard"><img src="../art_wrap/src/scripts/assets/cardboardtest.png"></div>
+                    <div class="wrapper paper"><img src="../art_wrap/src/scripts/assets/papertest.png"></div>
+                    <div class="wrapper bubble"><img src="../art_wrap/src/scripts/assets/bubbletest.png"></div>
+                    <div class="wrapper crate"><img src="../art_wrap/src/scripts/assets/cratetest.png"></div>
                 </div>
                 <div class="gallery"></div>
                 <canvas class="game-canvas" height="600" width="900"></canvas>
                 </div>
             <div class="right">
-                <div class="artwork-counter hidden">
+                <!-- <div class="artwork-counter hidden">
                     <div class="score hidden"></div>
-                </div>
+                </div> -->
             </div>
         </main>
     <footer></footer>
