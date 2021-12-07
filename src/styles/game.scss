@@ -67,7 +67,7 @@ ul li {
   border-radius: 10px;
   text-align: center;
   vertical-align: middle;
-  background-image: url(../src/scripts/assets/storage.png);
+  background-image: url(../src/scripts/assets/background.jpg);
   background-repeat: no-repeat;
   background-size: 900px 600px;
 }
@@ -105,6 +105,7 @@ ul li {
   width: 800px;
   background: white;
   border-radius: 10px;
+  margin: 0 auto;
 }
 
 .instruction-inner {
@@ -143,7 +144,7 @@ ul li {
 .winner {
   width: 900px;
   height: 600px;
-  background: rgb(252, 107, 187);
+  background: rgb(255, 131, 199);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
