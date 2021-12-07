@@ -100,6 +100,12 @@ ul li {
   box-sizing: border-box;
 }
 
+.intro {
+  width: 800px;
+  background: white;
+  border-radius: 10px;
+}
+
 .instruction {
   width: 900px;
   height: 600px;
@@ -174,11 +180,18 @@ ul li {
   display: flex;
   top: 20px;
   left: 50px;
-  width: 380px;
+  width: 410px;
   height: 90px;
   justify-content: space-around;
   background: white;
   border-radius: 5px;
+}
+
+.wrapper {
+  height: 80px;
+  line-height: 80px;
+  margin: 5px;
+
 }
 
 .view {
@@ -227,7 +240,7 @@ ul li {
   font-color: yellow;
 }
 
-.drawing {
+.artwork {
   padding: 10px;
 }
 

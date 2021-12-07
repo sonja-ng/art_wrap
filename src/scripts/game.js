@@ -12,7 +12,7 @@ class Game  {
   constructor() {
     this.artwork = [];
     this.wrapper = ['C', 'B', 'P', 'W'];
-    this.artworkMedium = [];
+    // this.artworkMedium = [];
     this.artworkSrc = [];
     this.firstWrappers = [];
     this.secondWrappers = [];
@@ -32,7 +32,7 @@ class Game  {
       let art = new Artwork();
       // debugger
       this.artwork.push(art);
-      this.artworkMedium.push(art.medium);
+      // this.artworkMedium.push(art.medium);
       this.artworkSrc.push(art.picture);
       this.firstWrappers.push(art.firstWrapper);
       this.secondWrappers.push(art.secondWrapper);
@@ -48,7 +48,7 @@ class Game  {
       const li = document.createElement("li");
       const img = document.createElement("img");
       img.src = this.artworkSrc[i];
-      img.classList.add(this.artworkMedium[i]);
+      img.classList.add("artwork");
       img.classList.add("next");
       if (i === 0) {
         img.classList.add("current");
@@ -178,7 +178,7 @@ class Game  {
     const ul = document.querySelector("ul");
     ul.remove();
     this.artwork = [];
-    this.artworkMedium = [];
+    // this.artworkMedium = [];
     this.artworkSrc = [];
     this.firstWrappers = [];
     this.secondWrappers = [];
@@ -194,7 +194,7 @@ class Game  {
     const ul = document.querySelector("ul");
     if (ul) ul.remove();
     this.artwork = [];
-    this.artworkMedium = [];
+    // this.artworkMedium = [];
     this.artworkSrc = [];
     this.firstWrappers = [];
     this.secondWrappers = [];
@@ -207,7 +207,7 @@ class Game  {
     
     this.addArtwork();
     this.draw();
-    this.setUpTimer();
+    // this.setUpTimer();
   }
 
   gameOverMessage(){
