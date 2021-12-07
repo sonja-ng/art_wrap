@@ -114,6 +114,17 @@ class Game  {
     return this.second === -1;
   }
 
+  // losePoint() {
+  //   if (this.score > 0) {
+  //     this.score -= 1;
+  //     const scoreCounter = document.querySelector(".score");
+  //   scoreCounter.innerText = `Points: ${this.score}`;
+  //   console.log(this.score);
+  //   }
+    
+
+  // }
+
   addWrapper(){
     const art = document.querySelector(".current");
     art.src = this.firstWrappers[0];
@@ -214,7 +225,7 @@ class Game  {
     
     this.addArtwork();
     this.draw();
-    // this.setUpTimer();
+    this.setUpTimer();
   }
 
   gameOverMessage(){
@@ -261,6 +272,17 @@ class Game  {
 
     this.removeScoreboard();
     console.log("You win!");
+
+    document.addEventListener("keydown", (e) => {
+      e.preventDefault();
+      const keyName = e.key;
+      const keyCode = e.code;
+      if (keyCode === 'Enter') {
+        const win = document.querySelector(".winner");
+        win.classList.add("hidden");
+          this.restart();
+      }
+    });
 
   }
 }

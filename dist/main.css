@@ -172,8 +172,10 @@ ul li {
   width: 300px;
   height: 412px;
   border-radius: 10px;
-  background: #007ea5;
+  background: #ffd5d5;
   margin-left: 10px;
+  text-align: center;
+  padding: 0 3px;
 }
 
 .legend-img {
@@ -188,7 +190,7 @@ ul li {
 .instruction {
   width: 900px;
   height: 600px;
-  background: #00ffdd;
+  background: #a1fff7;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -231,6 +233,11 @@ ul li {
   z-index: 100;
 }
 
+.heading {
+  width: 536px;
+  margin: 0 auto;
+}
+
 .game-over h1 {
   color: yellow;
   font-family: "Bungee", cursive;
@@ -246,8 +253,8 @@ ul li {
   width: 350px;
   height: 113px;
   justify-content: space-around;
-  background: #defffb;
-  border: 5px solid #ffff97;
+  background: #e0fff7;
+  border: 5px solid #6d6d6d;
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -258,7 +265,9 @@ ul li {
 }
 
 .selected {
-  border: 1px solid black;
+  outline: 5px solid #55ff7f;
+  border-radius: 5px;
+  background: rgba(0, 29, 192, 0.33);
 }
 
 .view {

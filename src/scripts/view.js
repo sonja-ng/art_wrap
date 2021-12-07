@@ -35,7 +35,7 @@ class View  {
             leftCanvas.classList.remove("hidden");  
             this.bindKeysHandle();
               console.log("Enter");
-              // this.game.setUpTimer();
+              this.game.setUpTimer();
               this.game.draw();
           }
       });
@@ -61,24 +61,34 @@ class View  {
           if (keyCode === "ArrowUp") {
             this.game.currentKey = "B";
             this.checkMatch();
+            const bubble = document.querySelector(".bubble");
+                bubble.classList.add("selected");
             console.log(`${this.game.currentKey}`);
           } else if (keyCode === "ArrowDown") {
             this.game.currentKey = "P";
             this.checkMatch();
+            const paper = document.querySelector(".paper");
+                paper.classList.add("selected");
             console.log(`${this.game.currentKey}`);
           } else if (keyCode === "ArrowLeft") {
             this.game.currentKey = "C";
             this.checkMatch();
+            const cardboard = document.querySelector(".cardboard");
+                cardboard.classList.add("selected");
             console.log(`${this.game.currentKey}`);
           } else if (keyCode === "ArrowRight") {
             this.game.currentKey = "W";
             this.checkMatch();
+            const crate = document.querySelector(".crate");
+                crate.classList.add("selected");
             console.log(`${this.game.currentKey}`);
           }
         }, false);
     
         document.addEventListener("keyup", (e) => {
           this.game.currentKey = "X";
+          const selected = document.querySelector(".selected");
+          selected.classList.remove("selected");
           // console.log("X"); //need to fix this, it's not changing back to X
         }, false);
       }
@@ -98,7 +108,9 @@ class View  {
                     setTimeout(this.game.moveUpLevel.bind(this.game), 450);
                 } 
               }
-          } 
+          } //else {
+          //   this.game.losePoint();
+          // } 
       }
   }
   
