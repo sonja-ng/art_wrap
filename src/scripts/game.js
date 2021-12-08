@@ -229,6 +229,7 @@ class Game  {
   }
 
   gameOverMessage(){
+    console.log(this.fresh);
     const gameOver = document.querySelector(".game-over");
     gameOver.classList.remove("hidden");
 
@@ -249,10 +250,11 @@ class Game  {
       e.preventDefault();
       const keyName = e.key;
       const keyCode = e.code;
-      if (keyCode === 'Enter') {
+      if (this.gameOver() && keyCode === 'Enter') {
         const over = document.querySelector(".game-over");
         over.classList.add("hidden");
           this.restart();
+          console.log(this.fresh);
       }
     });
   }
@@ -277,7 +279,7 @@ class Game  {
       e.preventDefault();
       const keyName = e.key;
       const keyCode = e.code;
-      if (keyCode === 'Enter') {
+      if (this.gameWon() && keyCode === 'Enter') {
         const win = document.querySelector(".winner");
         win.classList.add("hidden");
           this.restart();

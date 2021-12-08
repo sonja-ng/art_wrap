@@ -8,10 +8,6 @@ class View  {
         this.ctx = canvas.getContext('2d');
         this.game = game;
         this.start();
-        // this.drawCardboard(this.ctx);
-        // this.drawCrate(this.ctx);
-        // this.drawBubble(this.ctx);
-        // this.drawPaper(this.ctx);
     }
 
     removeIntro() {
@@ -28,7 +24,6 @@ class View  {
         
         document.addEventListener("keydown", (e) => {
           e.preventDefault();
-          const keyName = e.key;
           const keyCode = e.code;
           if (this.game.fresh === true && keyCode === 'Enter') {
             instruction.classList.add("hidden");
@@ -37,6 +32,8 @@ class View  {
               console.log("Enter");
               this.game.setUpTimer();
               this.game.draw();
+              // debugger
+              this.game.fresh = false;
           }
       });
     }
@@ -46,7 +43,7 @@ class View  {
             e.preventDefault();
             const keyName = e.key;
             const keyCode = e.code;
-            if (this.game.level === 0 && keyCode === 'Enter') {
+            if (this.game.fresh === true && keyCode === 'Enter') {
                 this.removeIntro();
             }
         });
@@ -54,7 +51,6 @@ class View  {
 
     bindKeysHandle(){
         //bind the four arrow keys to a specific value ('C', 'B', 'P', 'W')
-
         document.addEventListener("keydown", (e) => {
           const keyCode = e.code;
           e.preventDefault();
