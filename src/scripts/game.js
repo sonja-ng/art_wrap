@@ -171,7 +171,7 @@ class Game  {
         return true;
       } else if (this.currentKey !== currentArtwork.keys[0] && this.wrapper.includes(this.currentKey)) {
           // throw new Error("wrong pick!");
-          console.log("wrong pick from game file!");
+          // console.log("wrong pick from game file!");
          return false;
       }
     } else if (currentArtwork.status === 0) {
@@ -181,7 +181,7 @@ class Game  {
         return true;
       } else if (this.currentKey !== currentArtwork.keys[1] && this.wrapper.includes(this.currentKey)) {
           // throw new Error("wrong pick!");
-          console.log("wrong pick from game file!");
+          // console.log("wrong pick from game file!");
          return false;
       }
     }
@@ -215,7 +215,6 @@ class Game  {
     const ul = document.querySelector("ul");
     if (ul) ul.remove();
     this.artwork = [];
-    // this.artworkMedium = [];
     this.artworkSrc = [];
     this.firstWrappers = [];
     this.secondWrappers = [];
@@ -229,7 +228,7 @@ class Game  {
     
     this.addArtwork();
     this.draw();
-    // this.setUpTimer();
+    this.setUpTimer();
   }
 
   gameOverMessage(){

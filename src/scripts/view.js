@@ -30,7 +30,7 @@ class View  {
             leftCanvas.classList.remove("hidden");  
             this.bindKeysHandle();
               console.log("Enter");
-              // this.game.setUpTimer();
+              this.game.setUpTimer();
               this.game.draw();
               // debugger
               this.game.fresh = false;
@@ -83,9 +83,11 @@ class View  {
     
         document.addEventListener("keyup", (e) => {
           this.game.currentKey = "X";
-          const selected = document.querySelector(".selected");
-          selected.classList.remove("selected");
-          // console.log("X"); //need to fix this, it's not changing back to X
+          const keycode = e.code;
+          if (e.code === "ArrowLeft" || e.code === "ArrowRight" || e.code === "ArrowDown" || e.code === "ArrowUp"){
+            const selected = document.querySelector(".selected");
+            selected.classList.remove("selected");
+          }
         }, false);
       }
       
@@ -103,10 +105,29 @@ class View  {
                     // debugger
                     setTimeout(this.game.moveUpLevel.bind(this.game), 450);
                 } 
-              }
-           } //else {
-          //   this.game.losePoint();
-          // } 
+              } //below are for testing
+           } else if (this.game.currentKey === "B" && !this.game.isCorrect()) {
+            const bubble = document.querySelector(".bubble");
+            bubble.classList.add("wrong");
+           setTimeout(this.removeWrong.bind(this), 500);
+          } else if (this.game.currentKey === "C" && !this.game.isCorrect()) {
+            const cardboard = document.querySelector(".cardboard");
+            cardboard.classList.add("wrong");
+           setTimeout(this.removeWrong.bind(this), 500);
+          } else if (this.game.currentKey === "P" && !this.game.isCorrect()) {
+            const paper = document.querySelector(".paper");
+            paper.classList.add("wrong");
+           setTimeout(this.removeWrong.bind(this), 500);
+          } else if (this.game.currentKey === "W" && !this.game.isCorrect()) {
+            const crate = document.querySelector(".crate");
+            crate.classList.add("wrong");
+           setTimeout(this.removeWrong.bind(this), 500);
+          } 
+      }
+
+      removeWrong(){
+        const wrong = document.querySelector(".wrong");
+        wrong.classList.remove("wrong");
       }
   }
   
