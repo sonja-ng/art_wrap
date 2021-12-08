@@ -74,7 +74,7 @@ class Game  {
     counter.classList.remove("hidden");
     const scoreCounter = document.querySelector(".score");
     scoreCounter.classList.remove("hidden");
-    if (this.score === 0) {
+    if (this.score < 2) {
       scoreCounter.innerText = `Point: ${this.score}`;
     } else {
       scoreCounter.innerText = `Points: ${this.score}`;
@@ -134,7 +134,11 @@ class Game  {
   addSecondWrapper(){
     this.score += 1;
     const scoreCounter = document.querySelector(".score");
-    scoreCounter.innerText = `Points: ${this.score}`;
+    if (this.score < 2) {
+      scoreCounter.innerText = `Point: ${this.score}`;
+    } else {
+      scoreCounter.innerText = `Points: ${this.score}`;
+    }
     console.log(this.score);
     const art = document.querySelector(".current");
     art.src = this.secondWrappers[0];
@@ -225,7 +229,7 @@ class Game  {
     
     this.addArtwork();
     this.draw();
-    this.setUpTimer();
+    // this.setUpTimer();
   }
 
   gameOverMessage(){

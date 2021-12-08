@@ -30,7 +30,7 @@ class View  {
             leftCanvas.classList.remove("hidden");  
             this.bindKeysHandle();
               console.log("Enter");
-              this.game.setUpTimer();
+              // this.game.setUpTimer();
               this.game.draw();
               // debugger
               this.game.fresh = false;

@@ -152,9 +152,8 @@ ul li {
   position: relative;
   right: 0px;
   top: 25px;
-  border-radius: 5px;
   float: right;
-  margin-right: 10px;
+  margin-right: 40px;
 }
 
 .splash-intro {
@@ -173,32 +172,27 @@ ul li {
 .intro {
   width: 800px;
   background: white;
-  border-radius: 10px;
   margin: 0 auto;
 }
 
 .instruction-inner {
   display: flex;
   height: 412px;
+  justify-content: space-evenly;
 }
 
 .key-img {
-  width: 316px;
+  width: 299px;
   height: 412px;
-  border-radius: 10px;
   background: #ffd5d5;
-  margin-left: 10px;
   text-align: center;
-  padding: 0 3px;
 }
 
 .legend-img {
-  width: 540px;
-  background: #a2eda3;
-  border-radius: 10px;
+  width: 522px;
+  background: #a8e7ff;
   text-align: center;
   box-sizing: border-box;
-  margin-left: 14px;
 }
 
 .instruction {
@@ -216,7 +210,7 @@ ul li {
 .winner {
   width: 900px;
   height: 600px;
-  background-image: url(../src/scripts/assets/win.png);
+  background-image: url(../src/scripts/assets/splash-background.png);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -268,7 +262,6 @@ ul li {
   height: 110px;
   justify-content: space-around;
   background: #ffe4c5;
-  border-radius: 5px;
   box-sizing: border-box;
 }
 
@@ -317,7 +310,6 @@ ul li {
   height: 50px;
   background: white;
   float: left;
-  border-radius: 5px;
   box-sizing: border-box;
   position: absolute;
   right: 20px;
@@ -331,7 +323,6 @@ ul li {
   height: 40px;
   right: 20px;
   top: 80px;
-  border-radius: 5px;
   font-family: "Bungee", cursive;
   background: white;
   vertical-align: middle;
