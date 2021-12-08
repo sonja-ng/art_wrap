@@ -8,6 +8,12 @@ body {
 header {
   padding: 10px;
   margin: 30px 0;
+  height: 100px;
+}
+
+.title-header {
+  text-align: center;
+  margin: 0 auto;
 }
 
 h1 {
@@ -18,7 +24,7 @@ h1 {
 }
 
 h2 {
-  color: $color;
+  color: rgb(255, 255, 148);
   font-family: 'Bungee', cursive;
   font-size: 30px;
   text-align: center;
@@ -30,7 +36,14 @@ p {
   font-size: 20px;
   text-align: center;
   line-height: 2;
+}
 
+.button {
+  color: rgb(255, 255, 148);
+  font-family: 'Bungee', cursive;
+  font-size: 20px;
+  text-align: center;
+  line-height: 2;
 }
 
 main {
@@ -91,7 +104,8 @@ ul li {
 .splash-intro {
   width: 900px;
   height: 600px;
-  background: rgb(161, 255, 247);
+  // background: rgb(161, 255, 247);
+  background-image: url(../src/scripts/assets/splash-background.png);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -100,8 +114,6 @@ ul li {
   padding: 0 40px;
   box-sizing: border-box;
 }
-
-
 
 .intro {
   width: 800px;
@@ -116,7 +128,7 @@ ul li {
 }
 
 .key-img {
-  width: 300px;
+  width: 316px;
   height: 412px;
   border-radius: 10px;
   background:rgb(255, 213, 213);
@@ -126,17 +138,17 @@ ul li {
 }
 
 .legend-img {
-  width: 550px;
-  background: #d5ffd6;
+  width: 540px;
+  background: #a2eda3;
   border-radius: 10px;
   text-align: center;
   box-sizing: border-box;
-  margin-left: 20px;
+  margin-left: 14px;
 }
 .instruction {
   width: 900px;
   height: 600px;
-  background: rgb(161, 255, 247);
+  background: #44c8e3;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -148,7 +160,8 @@ ul li {
 .winner {
   width: 900px;
   height: 600px;
-  background: rgb(253, 143, 204);
+  // background: rgb(253, 143, 204);
+  background-image: url(../src/scripts/assets/win.png);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -197,10 +210,10 @@ ul li {
   top: 20px;
   left: 20px;
   width: 350px;
-  height: 113px;
+  height: 110px;
   justify-content: space-around;
-  background: rgb(224, 255, 247);
-  border: 5px solid rgb(109, 109, 109);
+  background: rgb(255, 228, 197);
+  // border: 5px solid rgb(109, 109, 109);
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -208,12 +221,19 @@ ul li {
 .wrapper {
   height: 100px;
   line-height: 100px;
+  margin-top: 5px;
 }
 
 .selected {
   outline: 5px solid rgb(85, 255, 127);
   border-radius: 5px;
-  background: rgb(0, 29, 192, .33);
+  background: rgba(7, 160, 27, 0.473);
+}
+
+.wrong {
+  outline: 5px solid rgb(255, 85, 85);
+  border-radius: 5px;
+  background: rgba(160, 7, 7, 0.473);
 }
 
 .view {
@@ -239,7 +259,7 @@ ul li {
 }
 
 .artwork-counter {
-  width: 180px;
+  width: 200px;
   height: 50px;
   background: white;
   float: left;
@@ -281,11 +301,40 @@ ul li {
   padding: 10px;
 }
 
-
-.sculpture {
-  padding: 10px;
+footer {
+  height: inherit;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
 }
 
-.painting {
-  padding: 10px;
+nav {
+  height: inherit;
+  width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color:rgb(141, 141, 141);
+
+}
+
+a:hover {
+  color:rgb(185, 185, 185);
+  cursor: pointer;
+}
+
+span {
+  position: relative;
+}
+
+// .left-footer {
+//   height: 100px;
+// }
+
+i {
+  margin: 1px;
 }

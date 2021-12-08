@@ -58,7 +58,7 @@ class View  {
             this.game.currentKey = "B";
             this.checkMatch();
             const bubble = document.querySelector(".bubble");
-                bubble.classList.add("selected");
+            bubble.classList.add("selected");
             console.log(`${this.game.currentKey}`);
           } else if (keyCode === "ArrowDown") {
             this.game.currentKey = "P";
@@ -104,7 +104,7 @@ class View  {
                     setTimeout(this.game.moveUpLevel.bind(this.game), 450);
                 } 
               }
-          } //else {
+           } //else {
           //   this.game.losePoint();
           // } 
       }

@@ -64,6 +64,12 @@ body {
 header {
   padding: 10px;
   margin: 30px 0;
+  height: 100px;
+}
+
+.title-header {
+  text-align: center;
+  margin: 0 auto;
 }
 
 h1 {
@@ -74,7 +80,7 @@ h1 {
 }
 
 h2 {
-  color: #118cff;
+  color: #ffff94;
   font-family: "Bungee", cursive;
   font-size: 30px;
   text-align: center;
@@ -82,6 +88,14 @@ h2 {
 
 p {
   color: #118cff;
+  font-family: "Bungee", cursive;
+  font-size: 20px;
+  text-align: center;
+  line-height: 2;
+}
+
+.button {
+  color: #ffff94;
   font-family: "Bungee", cursive;
   font-size: 20px;
   text-align: center;
@@ -146,7 +160,7 @@ ul li {
 .splash-intro {
   width: 900px;
   height: 600px;
-  background: #a1fff7;
+  background-image: url(../src/scripts/assets/splash-background.png);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -169,7 +183,7 @@ ul li {
 }
 
 .key-img {
-  width: 300px;
+  width: 316px;
   height: 412px;
   border-radius: 10px;
   background: #ffd5d5;
@@ -179,18 +193,18 @@ ul li {
 }
 
 .legend-img {
-  width: 550px;
-  background: #d5ffd6;
+  width: 540px;
+  background: #a2eda3;
   border-radius: 10px;
   text-align: center;
   box-sizing: border-box;
-  margin-left: 20px;
+  margin-left: 14px;
 }
 
 .instruction {
   width: 900px;
   height: 600px;
-  background: #a1fff7;
+  background: #44c8e3;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -202,7 +216,7 @@ ul li {
 .winner {
   width: 900px;
   height: 600px;
-  background: #fd8fcc;
+  background-image: url(../src/scripts/assets/win.png);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -251,10 +265,9 @@ ul li {
   top: 20px;
   left: 20px;
   width: 350px;
-  height: 113px;
+  height: 110px;
   justify-content: space-around;
-  background: #e0fff7;
-  border: 5px solid #6d6d6d;
+  background: #ffe4c5;
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -262,12 +275,19 @@ ul li {
 .wrapper {
   height: 100px;
   line-height: 100px;
+  margin-top: 5px;
 }
 
 .selected {
   outline: 5px solid #55ff7f;
   border-radius: 5px;
-  background: rgba(0, 29, 192, 0.33);
+  background: rgba(7, 160, 27, 0.473);
+}
+
+.wrong {
+  outline: 5px solid #ff5555;
+  border-radius: 5px;
+  background: rgba(160, 7, 7, 0.473);
 }
 
 .view {
@@ -293,7 +313,7 @@ ul li {
 }
 
 .artwork-counter {
-  width: 180px;
+  width: 200px;
   height: 50px;
   background: white;
   float: left;
@@ -335,10 +355,35 @@ ul li {
   padding: 10px;
 }
 
-.sculpture {
-  padding: 10px;
+footer {
+  height: inherit;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
 }
 
-.painting {
-  padding: 10px;
+nav {
+  height: inherit;
+  width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: #8d8d8d;
+}
+
+a:hover {
+  color: #b9b9b9;
+  cursor: pointer;
+}
+
+span {
+  position: relative;
+}
+
+i {
+  margin: 1px;
 }

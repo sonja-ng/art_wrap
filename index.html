@@ -11,12 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/f9fe52499d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./dist/main.css">
     <script src="./dist/main.js"></script>
 </head>
 <body>
-    <header><h1 class="title-header hidden">Art Wrap</h1></header>        
+    <header><div class="title-header hidden"><img src="../art_wrap/src/scripts/assets/test.png"></div></header>        
         <main>
             <div class="left">
                 <canvas class="legend hidden" width="250" height="550"><img src="../art_wrap/src/scripts/assets/in-gamekey.jpg"></canvas>
@@ -27,18 +27,18 @@
                     <div class="intro">
                     <p>You are an intern in a mega (chaotic) gallery and your first job is to pack artworks in record time for the next big show.
                     </p></div>
-                    <p>Press Enter to Continue</p>
+                    <div class="button">Press Enter to Continue</div>
                 </div>
                 <div class="instruction hidden">
                     
                     <h2>Your boss left you a note:</h2>
-                    <p>Match the artwork with the correct wrappers. Ordering matters!</p>
+                    <div class="intro"><p>Match artwork with the correct wrappers. Ordering matters!</p></div>
                     <div class="instruction-inner">
                     <div class ="legend-img">
                     <img src="../art_wrap/src/scripts/assets/legend.jpg"></div>
                     <div class="key-img"><img src="../art_wrap/src/scripts/assets/key-img.jpg"></div>
                     </div>
-                    <p>Press Enter to Start</p>
+                    <div class="button">Press Enter to Start</div>
                 </div>
                 <div class="countdown-timer hidden"></div>
                 <div class="artwork-counter hidden">
@@ -48,33 +48,36 @@
                 <div class="game-over hidden">
                     <h1>Time's Up!</h1>
                     <div class="intro">
-                        <p>No sweat, another last-minute exhibition is coming up.</p></div>
+                        <p>No sweat, another last-minute exhibition just came up.</p></div>
                     <div class ="lose-message"></div>
-                    <p>Press Enter to Restart</p>
+                    <div class="button">Press Enter to Restart</div>
                 </div>
                 <div class="winner hidden">
                     <h1>Well done!</h1>
                     <div class="intro">
                         <p>Now that the works are packed. We need to move them to the truck waiting outside. But the freight elevator is broken...</p></div>
                     <div class ="win-message"></div>
-                    <p>Level Two Coming Soon</p>
-                    <p>Press Enter to Play Again</p>
+                    <div class="button">Level Two Coming Soon<br><br>
+                    Press Enter to Play Again</div>
                 </div>
                 <div class="icons hidden">
-                    <div class="wrapper cardboard"><img src="../art_wrap/src/scripts/assets/cardboardtest.png"></div>
-                    <div class="wrapper paper"><img src="../art_wrap/src/scripts/assets/papertest.png"></div>
-                    <div class="wrapper bubble"><img src="../art_wrap/src/scripts/assets/bubbletest.png"></div>
-                    <div class="wrapper crate"><img src="../art_wrap/src/scripts/assets/cratetest.png"></div>
+                    <div class="wrapper cardboard"><img src="../art_wrap/src/scripts/assets/cardboardtest1.png"></div>
+                    <div class="wrapper paper"><img src="../art_wrap/src/scripts/assets/papertest1.png"></div>
+                    <div class="wrapper bubble"><img src="../art_wrap/src/scripts/assets/bubbletest1.png"></div>
+                    <div class="wrapper crate"><img src="../art_wrap/src/scripts/assets/cratetest1.png"></div>
                 </div>
                 <div class="gallery"></div>
                 <canvas class="game-canvas" height="600" width="900"></canvas>
                 </div>
             <div class="right">
-                <!-- <div class="artwork-counter hidden">
-                    <div class="score hidden"></div>
-                </div> -->
             </div>
         </main>
-    <footer></footer>
+    <footer>
+        <nav>
+            <span><a href="https://github.com/sonja-ng/" target="_blank"><i class="fab fa-github-square fa-3x"></i></a></span>
+              <span><a href="https://www.linkedin.com/in/sonja-ng-a22aa513/" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+            </span>
+        </nav>
+</footer>
 </body>
 </html>
