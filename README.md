@@ -1,6 +1,6 @@
 # Art Wrap
 
-![wireframe](./wireframe/screenshot.jpg)
+![wireframe](./wireframe/screenshot2.jpg)
 # Summary:
 
 Art Wrap is a matching game where you play as an intern in a chaotic gallery and must wrap artworks with the right packaging for the next big show.
