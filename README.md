@@ -2,7 +2,7 @@
 
 # Summary:
 
-In Art Wrap, you are an art handler in a chaotic gallery who must pack artworks last-minute so they can be shipped out just in time for the next big show.
+Art Wrap is a matching game where you play as an intern in a chaotic gallery and must wrap artworks with the right packaging so they can be shipped out just in time for the next big show.
 
 # Functionality & MVPs:
 
@@ -13,20 +13,20 @@ In this game, users will be able to:
 - see a timer countdown
 
 ## Bonus
-- after several levels, move on to new tier with new obstacles
-- implementing a counter that shows number of levels (or artworks) completed
+- after several levels, move on to new stages
+- implement a counter that shows number of levels (or artworks) completed
 
-This project will also include:
+This project also includes:
 - a production README
 
 # Wireframe:
 ![wireframe](./wireframe/wireframe.png)
 
-- Keys will include the three types of artwork (painting, framed drawing, sculpture), and the order of packaging materials that goes with each artwork type.
-- Each packaging material corresponds to the four arrow keys. They must be selected in the order listed in the keys.
+- Keys include the three types of artwork (painting, framed drawing, sculpture), and the order of packaging materials that goes with each artwork type.
+- Each of the four arrow keys corresponds to a specific packaging material. They must be selected in the stated order.
 
 # Technologies, Libraries:
--This project uses canvas API, HTML, CSS, Javascript, maybe 3js, webGL (I might also use third party sites to create my own sprites)
+-This project uses vanilla Javascript, CSS, and HTML
 
 # Implementation Timeline:
 - Friday Afternoon & Weekend: Set up webpack environment and display canvas on browser, work on game logic and pinning down the list of classes needed (currently: Game, Artwork, Material). Research and test out canvas and/or j3s framework code snippets. Set up basic functionality of game on screen.

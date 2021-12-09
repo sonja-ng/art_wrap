@@ -98,9 +98,7 @@ class View  {
                 this.game.addWrapper();
               } else if (this.game.artwork[0].status === 1) {
                 this.game.addSecondWrapper();
-                // console.log(`${this.game.artwork}`);
                 this.game.artwork.shift();
-                 // console.log(`${this.game.artwork}`);
                 if (this.game.levelEnd()) {
                     // debugger
                     setTimeout(this.game.moveUpLevel.bind(this.game), 450);

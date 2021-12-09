@@ -12,7 +12,6 @@ class Game  {
   constructor() {
     this.artwork = [];
     this.wrapper = ['C', 'B', 'P', 'W'];
-    // this.artworkMedium = [];
     this.artworkSrc = [];
     this.firstWrappers = [];
     this.secondWrappers = [];
@@ -32,7 +31,6 @@ class Game  {
       let art = new Artwork();
       // debugger
       this.artwork.push(art);
-      // this.artworkMedium.push(art.medium);
       this.artworkSrc.push(art.picture);
       this.firstWrappers.push(art.firstWrapper);
       this.secondWrappers.push(art.secondWrapper);
@@ -58,15 +56,11 @@ class Game  {
       ul.append(li);
     }
 
-  image.append(ul);
-  const icons = document.querySelector(".icons");
-  icons.classList.remove("hidden");
-
-  console.log(this.level);
-
-  this.setUpScoreboard();
-  this.fresh = false;
-  
+    image.append(ul);
+    const icons = document.querySelector(".icons");
+    icons.classList.remove("hidden");
+    this.setUpScoreboard();
+    this.fresh = false;
   }
 
   setUpScoreboard() {
@@ -79,8 +73,6 @@ class Game  {
     } else {
       scoreCounter.innerText = `Points: ${this.score}`;
     }
-    
-    
   }
 
   removeScoreboard() {
@@ -167,21 +159,15 @@ class Game  {
     if (currentArtwork.status === -1) {
       if (this.currentKey === currentArtwork.keys[0]) {
         currentArtwork.updateStatus();
-        // console.log(`${currentArtwork.keys} and ${currentArtwork.status}`);
         return true;
       } else if (this.currentKey !== currentArtwork.keys[0] && this.wrapper.includes(this.currentKey)) {
-          // throw new Error("wrong pick!");
-          // console.log("wrong pick from game file!");
          return false;
       }
     } else if (currentArtwork.status === 0) {
       if (this.currentKey === currentArtwork.keys[1]) {
         currentArtwork.updateStatus();
-        // console.log(`${currentArtwork.keys} and ${currentArtwork.status}`);
         return true;
       } else if (this.currentKey !== currentArtwork.keys[1] && this.wrapper.includes(this.currentKey)) {
-          // throw new Error("wrong pick!");
-          // console.log("wrong pick from game file!");
          return false;
       }
     }
@@ -199,7 +185,6 @@ class Game  {
     const ul = document.querySelector("ul");
     ul.remove();
     this.artwork = [];
-    // this.artworkMedium = [];
     this.artworkSrc = [];
     this.firstWrappers = [];
     this.secondWrappers = [];
@@ -232,7 +217,6 @@ class Game  {
   }
 
   gameOverMessage(){
-    console.log(this.fresh);
     const gameOver = document.querySelector(".game-over");
     gameOver.classList.remove("hidden");
 
@@ -240,7 +224,6 @@ class Game  {
     icons.classList.add("hidden");
 
     this.removeScoreboard();
-    // gameOver.innerText = `Your score: ${this.score}!`;
 
     const legend = document.querySelector(".legend");
     legend.classList.add("hidden");
@@ -273,7 +256,6 @@ class Game  {
     winner.classList.remove("hidden");
     const legend = document.querySelector(".legend");
     legend.classList.add("hidden");
-    // winner.innerText = `Your score: ${this.score}!`;
 
     this.removeScoreboard();
     console.log("You win!");
@@ -288,7 +270,6 @@ class Game  {
           this.restart();
       }
     });
-
   }
 }
 

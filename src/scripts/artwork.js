@@ -15,8 +15,6 @@ const ARTKEYS = {
     "s4": [['B', 'W'], "./src/scripts/assets/sculpture/kowloon.png", "./src/scripts/assets/sculpture/kowloon1.png", "./src/scripts/assets/sculpture/kowloon2.png"]
   };
 
-  
-
 class Artwork {
   constructor() {
     this.status = -1;  //artwork status: -1, 0, 1. to indicate their wrapping status
@@ -31,27 +29,9 @@ class Artwork {
         this.status += 1;
     }
 
-
-    finishWrap() {  //when an artwork's is completely wrapped
+    finishWrap() {  //when an artwork is completely wrapped
         return this.status === 1;
     }
-
 }
 
 export default Artwork;
-
-
-// addWrapper(){
-//   const art = document.querySelector(".one");
-//   art.src = this.firstWrappers[0];
-
-// }
-
-// addSecondWrapper(){
-//   const firstWrapper = document.querySelector(".first-wrapper");
-//   firstWrapper.classList.add("hidden");
-//   const secondWrapper = document.createElement("img");
-//   secondWrapper.src = this.secondWrappers[0];
-//   const li = document.querySelector("li");
-//   li.append(secondWrapper);
-// }
