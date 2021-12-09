@@ -36,6 +36,14 @@ vanilla Javascript, CSS, and HTML5.
 }
 ```
 
-## Future Features:
+## MVP
+
+In this game, users will be able to:
+- start and restart game
+- use keyboard to select packaging materials to wrap each artwork
+- move up to new levels
+- see a timer countdown
+
+## Future Features
 - Add new levels with different game plays and technologies
 - Add scoring system
