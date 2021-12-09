@@ -1,9 +1,12 @@
 # Art Wrap
 
-![wireframe](./wireframe/screenshot3.jpg)
+![gameplay](./wireframe/screenshot3.jpg)
+
 # Summary:
 
-Art Wrap is a matching game where you play as an intern in a chaotic gallery and must wrap artworks with the right packaging for the next big show.
+Art Wrap is matching game where you play as a gallery intern who must wrap artworks with the correct materials within a time limit. The project uses 
+vanilla Javascript, CSS, and HTML5.
+[Play here](https://sonja-ng.github.io/art_wrap/)
 
 # Functionality & MVPs:
 
@@ -13,12 +16,15 @@ In this game, users will be able to:
 - move up to new levels
 - see a timer countdown
 
+```js
+
+
+```
+
 ## Bonus
 - after several levels, move on to new stages
 - implement a counter that shows number of levels (or artworks) completed
 
-This project also includes:
-- a production README
 
 # Wireframe:
 ![wireframe](./wireframe/wireframe.png)
@@ -26,13 +32,7 @@ This project also includes:
 - Keys include the three types of artwork (painting, framed drawing, sculpture), and the order of packaging materials that goes with each artwork type.
 - Each of the four arrow keys corresponds to a specific packaging material. They must be selected in the stated order.
 
-# Technologies, Libraries:
--This project uses vanilla Javascript, CSS, and HTML
 
-# Implementation Timeline:
-- Friday Afternoon & Weekend: Set up webpack environment and display canvas on browser, work on game logic and pinning down the list of classes needed (currently: Game, Artwork, Material). Research and test out canvas and/or j3s framework code snippets. Set up basic functionality of game on screen.
-- Monday: Continue with game logic coding, testing user control
-- Tuesday: Continue with user control testing and moving games to second level. Start to work on views and styling 
-- Wednesday: keep working on views, bug-fixing, and polishing text copy for README and anything else as necessary.
-- Thursday Morning: Deploy project to github
-
+# Future Features:
+- Add new levels with different game plays and technologies
+- Add scoring system
