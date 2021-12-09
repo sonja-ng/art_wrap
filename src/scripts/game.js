@@ -1,5 +1,6 @@
 import Artwork from './artwork';
-console.log("Game file!")
+
+
 
 const LEVEL = {
   0: 1,
@@ -29,7 +30,6 @@ class Game  {
   
     for (let i = 0; i < LEVEL[this.level]; i++) {
       let art = new Artwork();
-      // debugger
       this.artwork.push(art);
       this.artworkSrc.push(art.picture);
       this.firstWrappers.push(art.firstWrapper);
@@ -91,8 +91,7 @@ class Game  {
     const countdown = document.querySelector(".countdown-timer");
     countdown.classList.remove("hidden");
     countdown.innerText = `0${this.second}`;
-    this.second -= 1;
-    console.log(this.second);    
+    this.second -= 1;   
     if (this.second === -1) {
       clearInterval(this.timer);
       countdown.classList.add("hidden");
@@ -131,7 +130,7 @@ class Game  {
     } else {
       scoreCounter.innerText = `Points: ${this.score}`;
     }
-    console.log(this.score);
+
     const art = document.querySelector(".current");
     art.src = this.secondWrappers[0];
     art.classList.remove("current");
@@ -193,7 +192,6 @@ class Game  {
     
     this.addArtwork();
     this.draw();
-    console.log(this.level);
   }
 
   restart() {
@@ -228,10 +226,6 @@ class Game  {
     const legend = document.querySelector(".legend");
     legend.classList.add("hidden");
 
-
-
-    console.log("time's up!");
-
     document.addEventListener("keydown", (e) => {
       e.preventDefault();
       const keyName = e.key;
@@ -240,7 +234,6 @@ class Game  {
         const over = document.querySelector(".game-over");
         over.classList.add("hidden");
           this.restart();
-          console.log(this.fresh);
       }
     });
   }
@@ -258,7 +251,6 @@ class Game  {
     legend.classList.add("hidden");
 
     this.removeScoreboard();
-    console.log("You win!");
 
     document.addEventListener("keydown", (e) => {
       e.preventDefault();

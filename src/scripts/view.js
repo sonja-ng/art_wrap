@@ -1,7 +1,6 @@
 import Game from './game';
 import Artwork from './artwork';
 
-console.log("View file!")
 
 class View  {
     constructor(game, canvas) {
@@ -29,10 +28,8 @@ class View  {
             instruction.classList.add("hidden");
             leftCanvas.classList.remove("hidden");  
             this.bindKeysHandle();
-              console.log("Enter");
               this.game.setUpTimer();
               this.game.draw();
-              // debugger
               this.game.fresh = false;
           }
       });
@@ -59,25 +56,21 @@ class View  {
             this.checkMatch();
             const bubble = document.querySelector(".bubble");
             bubble.classList.add("selected");
-            console.log(`${this.game.currentKey}`);
           } else if (keyCode === "ArrowDown") {
             this.game.currentKey = "P";
             this.checkMatch();
             const paper = document.querySelector(".paper");
                 paper.classList.add("selected");
-            console.log(`${this.game.currentKey}`);
           } else if (keyCode === "ArrowLeft") {
             this.game.currentKey = "C";
             this.checkMatch();
             const cardboard = document.querySelector(".cardboard");
                 cardboard.classList.add("selected");
-            console.log(`${this.game.currentKey}`);
           } else if (keyCode === "ArrowRight") {
             this.game.currentKey = "W";
             this.checkMatch();
             const crate = document.querySelector(".crate");
                 crate.classList.add("selected");
-            console.log(`${this.game.currentKey}`);
           }
         }, false);
     
