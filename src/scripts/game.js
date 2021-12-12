@@ -191,7 +191,7 @@ class Game  {
     this.firstWrappers = [];
     this.secondWrappers = [];
     this.currentKey = "X";
-    this.second = 7;
+    this.second = 6;
     
     this.addArtwork();
     this.draw();
