@@ -48,40 +48,40 @@ class View  {
 
     bindKeysHandle(){
         //bind the four arrow keys to a specific value ('C', 'B', 'P', 'W')
-        document.addEventListener("keydown", (e) => {
-          const keyCode = e.code;
-          e.preventDefault();
-          if (keyCode === "ArrowUp") {
-            this.game.currentKey = "B";
-            this.checkMatch();
-            const bubble = document.querySelector(".bubble");
-            bubble.classList.add("selected");
-          } else if (keyCode === "ArrowDown") {
-            this.game.currentKey = "P";
-            this.checkMatch();
-            const paper = document.querySelector(".paper");
-                paper.classList.add("selected");
-          } else if (keyCode === "ArrowLeft") {
-            this.game.currentKey = "C";
-            this.checkMatch();
-            const cardboard = document.querySelector(".cardboard");
-                cardboard.classList.add("selected");
-          } else if (keyCode === "ArrowRight") {
-            this.game.currentKey = "W";
-            this.checkMatch();
-            const crate = document.querySelector(".crate");
-                crate.classList.add("selected");
-          }
-        }, false);
-    
-        document.addEventListener("keyup", (e) => {
-          this.game.currentKey = "X";
-          const keycode = e.code;
-          if (e.code === "ArrowLeft" || e.code === "ArrowRight" || e.code === "ArrowDown" || e.code === "ArrowUp"){
-            const selected = document.querySelector(".selected");
-            selected.classList.remove("selected");
-          }
-        }, false);
+            document.addEventListener("keydown", (e) => {
+              const keyCode = e.code;
+              e.preventDefault();
+              if (keyCode === "ArrowUp") {
+                this.game.currentKey = "B";
+                this.checkMatch();
+                const bubble = document.querySelector(".bubble");
+                bubble.classList.add("selected");
+              } else if (keyCode === "ArrowDown") {
+                this.game.currentKey = "P";
+                this.checkMatch();
+                const paper = document.querySelector(".paper");
+                    paper.classList.add("selected");
+              } else if (keyCode === "ArrowLeft") {
+                this.game.currentKey = "C";
+                this.checkMatch();
+                const cardboard = document.querySelector(".cardboard");
+                    cardboard.classList.add("selected");
+              } else if (keyCode === "ArrowRight") {
+                this.game.currentKey = "W";
+                this.checkMatch();
+                const crate = document.querySelector(".crate");
+                    crate.classList.add("selected");
+              }
+            }, false);
+        
+            document.addEventListener("keyup", (e) => {
+              this.game.currentKey = "X";
+              const keycode = e.code;
+              if (e.code === "ArrowLeft" || e.code === "ArrowRight" || e.code === "ArrowDown" || e.code === "ArrowUp"){
+                const selected = document.querySelector(".selected");
+                if (selected) selected.classList.remove("selected");
+              }
+            }, false);
       }
       
       checkMatch(){
@@ -118,7 +118,7 @@ class View  {
 
       removeWrong(){
         const wrong = document.querySelector(".wrong");
-        wrong.classList.remove("wrong");
+        if (wrong) wrong.classList.remove("wrong");
       }
   }
   

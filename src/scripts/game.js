@@ -1,7 +1,5 @@
 import Artwork from './artwork';
 
-
-
 const LEVEL = {
   0: 1,
   1: 3,
@@ -24,6 +22,7 @@ class Game  {
     this.artworkCounter = 0;
     this.timer = undefined;
     this.fresh = true;
+    this.over = false;
   }
 
   addArtwork(){
@@ -102,6 +101,7 @@ class Game  {
   }
 
   gameOver() {
+    this.over = true;
     return this.second === -1;
   }
 
@@ -118,7 +118,7 @@ class Game  {
 
   addWrapper(){
     const art = document.querySelector(".current");
-    art.src = this.firstWrappers[0];
+    if(art) art.src = this.firstWrappers[0];
     this.firstWrappers.shift();
   }
 
@@ -131,10 +131,13 @@ class Game  {
       scoreCounter.innerText = `Points: ${this.score}`;
     }
 
+    if (!this.gameOver()) {
     const art = document.querySelector(".current");
-    art.src = this.secondWrappers[0];
-    art.classList.remove("current");
-    art.classList.add("done");
+      art.src = this.secondWrappers[0];
+      art.classList.remove("current");
+      art.classList.add("done");
+    }
+    
     this.artworkCounter += 1;
     this.secondWrappers.shift();
     if (this.secondWrappers.length > 0) {
@@ -153,16 +156,16 @@ class Game  {
   }
   
   isCorrect() { 
-    let currentArtwork = this.artwork[0];
+    const currentArtwork = this.artwork[0];
     // debugger
-    if (currentArtwork.status === -1) {
+    if (currentArtwork && currentArtwork.status === -1) {
       if (this.currentKey === currentArtwork.keys[0]) {
         currentArtwork.updateStatus();
         return true;
       } else if (this.currentKey !== currentArtwork.keys[0] && this.wrapper.includes(this.currentKey)) {
          return false;
       }
-    } else if (currentArtwork.status === 0) {
+    } else if (currentArtwork && currentArtwork.status === 0) {
       if (this.currentKey === currentArtwork.keys[1]) {
         currentArtwork.updateStatus();
         return true;
@@ -182,7 +185,7 @@ class Game  {
 
   moveUpLevel() {
     const ul = document.querySelector("ul");
-    ul.remove();
+    if (ul) ul.remove();
     this.artwork = [];
     this.artworkSrc = [];
     this.firstWrappers = [];
@@ -205,6 +208,7 @@ class Game  {
     this.level = 0;
     this.score = 0;
     this.second = 7;
+    this.over = false;
 
     const legend = document.querySelector(".legend");
     legend.classList.remove("hidden");
@@ -217,6 +221,8 @@ class Game  {
   gameOverMessage(){
     const gameOver = document.querySelector(".game-over");
     gameOver.classList.remove("hidden");
+    this.artwork = [];
+    this.over = true;
 
     const icons = document.querySelector(".icons");
     icons.classList.add("hidden");
@@ -241,6 +247,7 @@ class Game  {
   winMessage(){
     const ul = document.querySelector("ul");
     ul.remove();
+    this.over = true;
 
     const icons = document.querySelector(".icons");
     icons.classList.add("hidden");
