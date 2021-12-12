@@ -19,7 +19,7 @@ class Game  {
     this.currentKey = "X";
     this.level = 0;
     this.score = 0;
-    this.second = 5;
+    this.second = 7;
     this.addArtwork()
     this.artworkCounter = 0;
     this.timer = undefined;
@@ -188,7 +188,7 @@ class Game  {
     this.firstWrappers = [];
     this.secondWrappers = [];
     this.currentKey = "X";
-    this.second = 5;
+    this.second = 7;
     
     this.addArtwork();
     this.draw();
@@ -204,7 +204,7 @@ class Game  {
     this.currentKey = "X";
     this.level = 0;
     this.score = 0;
-    this.second = 5;
+    this.second = 7;
 
     const legend = document.querySelector(".legend");
     legend.classList.remove("hidden");
