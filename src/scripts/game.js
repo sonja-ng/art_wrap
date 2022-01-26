@@ -105,17 +105,6 @@ class Game  {
     return this.second === -1;
   }
 
-  // losePoint() {
-  //   if (this.score > 0) {
-  //     this.score -= 1;
-  //     const scoreCounter = document.querySelector(".score");
-  //   scoreCounter.innerText = `Points: ${this.score}`;
-  //   console.log(this.score);
-  //   }
-    
-
-  // }
-
   addWrapper(){
     const art = document.querySelector(".current");
     if(art) art.src = this.firstWrappers[0];
