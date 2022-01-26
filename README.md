@@ -1,6 +1,6 @@
 # Art Wrap
 
-![gameplay](./wireframe/art_wrap_intro.gif)
+![gameplay](./wireframe/screenshot.png)
 
 Art Wrap is matching game where you play as a gallery intern who must wrap artworks with the correct materials within a time limit. The project uses 
 vanilla Javascript, CSS, and HTML5.
