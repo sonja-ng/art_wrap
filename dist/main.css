@@ -1,3 +1,385 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:"";content:none}table{border-collapse:collapse;border-spacing:0}body{width:inherit;margin:0 auto;background:#ffff9c}header{padding:10px;margin:30px 0;height:100px}.title-header{text-align:center;margin:0 auto}h1{color:#118cff;font-family:"Bungee",cursive;font-size:50px;text-align:center}h2{color:#ffff94;font-family:"Bungee",cursive;font-size:30px;text-align:center}p{color:#118cff;font-family:"Bungee",cursive;font-size:20px;text-align:center;line-height:2}.button{color:#ffff94;font-family:"Bungee",cursive;font-size:20px;text-align:center;line-height:2}main{position:relative;width:inherit;display:flex}.gallery{position:absolute;height:600px;width:900px;top:0px;left:0px}.gallery ul{display:flex;justify-content:space-around;position:absolute;bottom:100px;width:inherit}ul li{width:250px;height:250px;display:block;text-align:center;line-height:250px}.game-canvas{border-radius:10px;text-align:center;vertical-align:middle;background-image:url(../src/scripts/assets/background.jpg);background-repeat:no-repeat;background-size:900px 600px}.center{width:900px;position:relative}.legend{background-image:url(../src/scripts/assets/in-gamekey.jpg);background-repeat:no-repeat;position:relative;right:0px;top:25px;float:right;margin-right:40px}.splash-intro{width:900px;height:600px;background-image:url(../src/scripts/assets/splash-background.png);display:flex;flex-direction:column;justify-content:space-evenly;position:absolute;border-radius:10px;padding:0 40px;box-sizing:border-box}.intro{width:800px;background:#fff;margin:0 auto}.instruction-inner{display:flex;height:412px;justify-content:space-evenly}.key-img{width:299px;height:412px;background:#ffd5d5;text-align:center}.legend-img{width:522px;background:#a8e7ff;text-align:center;box-sizing:border-box}.instruction{width:900px;height:600px;background:#44c8e3;display:flex;flex-direction:column;justify-content:space-evenly;position:absolute;border-radius:10px;box-sizing:border-box}.winner{width:900px;height:600px;background-image:url(../src/scripts/assets/splash-background.png);display:flex;flex-direction:column;justify-content:space-evenly;position:absolute;border-radius:10px;padding:0 40px;box-sizing:border-box}.winner h1{color:#ff0;font-family:"Bungee",cursive;font-size:50px;text-align:center}.game-over{width:900px;height:600px;background:#00bcf5;display:flex;flex-direction:column;justify-content:space-evenly;position:absolute;border-radius:10px;padding:0 40px;box-sizing:border-box;z-index:100}.heading{width:536px;margin:0 auto}.game-over h1{color:#ff0;font-family:"Bungee",cursive;font-size:50px;text-align:center}.icons{position:absolute;display:flex;top:20px;left:20px;width:350px;height:110px;justify-content:space-around;background:#ffe4c5;box-sizing:border-box}.wrapper{height:100px;line-height:100px;margin-top:5px}.selected{outline:5px solid #55ff7f;border-radius:5px;background:rgba(7,160,27,.473)}.wrong{outline:5px solid #f55;border-radius:5px;background:rgba(160,7,7,.473)}.view{width:inherit}.left{width:25%}.right{width:25%}.hidden{display:none}.current{outline:5px dashed #fff;box-sizing:border-box;padding:10px}.artwork-counter{width:200px;height:50px;background:#fff;float:left;box-sizing:border-box;position:absolute;right:20px;top:20px}.countdown-timer{font-size:40px;position:absolute;width:100px;height:40px;right:20px;top:80px;font-family:"Bungee",cursive;background:#fff;vertical-align:middle;text-align:center}.score{font-family:"Bungee",cursive;font-size:30px;vertical-align:middle;text-align:center;position:relative;top:10px}.winner p{font-color:#ff0}.artwork{padding:10px}footer{height:inherit;width:100%;position:fixed;bottom:0px}nav{height:inherit;width:900px;margin:0 auto;text-align:center;display:flex;justify-content:center}a{color:#8d8d8d}a:hover{color:#b9b9b9;cursor:pointer}span{position:relative}i{margin:1px}
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
-/*# sourceMappingURL=main.css.map*/
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  width: inherit;
+  margin: 0 auto;
+  background: #ffff9c;
+}
+
+header {
+  padding: 10px;
+  margin: 30px 0;
+  height: 100px;
+}
+
+.title-header {
+  text-align: center;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #118cff;
+  font-family: "Bungee", cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+h2 {
+  color: #ffff94;
+  font-family: "Bungee", cursive;
+  font-size: 30px;
+  text-align: center;
+}
+
+p {
+  color: #118cff;
+  font-family: "Bungee", cursive;
+  font-size: 20px;
+  text-align: center;
+  line-height: 2;
+}
+
+.button {
+  color: #ffff94;
+  font-family: "Bungee", cursive;
+  font-size: 20px;
+  text-align: center;
+  line-height: 2;
+}
+
+main {
+  position: relative;
+  width: inherit;
+  display: flex;
+}
+
+.gallery {
+  position: absolute;
+  height: 600px;
+  width: 900px;
+  top: 0px;
+  left: 0px;
+}
+
+.gallery ul {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 100px;
+  width: inherit;
+}
+
+ul li {
+  width: 250px;
+  height: 250px;
+  display: block;
+  text-align: center;
+  line-height: 250px;
+}
+
+.game-canvas {
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  background-image: url(../src/scripts/assets/background.jpg);
+  background-repeat: no-repeat;
+  background-size: 900px 600px;
+}
+
+.center {
+  width: 900px;
+  position: relative;
+}
+
+.legend {
+  background-image: url(../src/scripts/assets/in-gamekey.jpg);
+  background-repeat: no-repeat;
+  position: relative;
+  right: 0px;
+  top: 25px;
+  float: right;
+  margin-right: 40px;
+}
+
+.splash-intro {
+  width: 900px;
+  height: 600px;
+  background-image: url(../src/scripts/assets/splash-background.png);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  border-radius: 10px;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.intro {
+  width: 800px;
+  background: white;
+  margin: 0 auto;
+}
+
+.instruction-inner {
+  display: flex;
+  height: 412px;
+  justify-content: space-evenly;
+}
+
+.key-img {
+  width: 299px;
+  height: 412px;
+  background: #ffd5d5;
+  text-align: center;
+}
+
+.legend-img {
+  width: 522px;
+  background: #a8e7ff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.instruction {
+  width: 900px;
+  height: 600px;
+  background: #44c8e3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.winner {
+  width: 900px;
+  height: 600px;
+  background-image: url(../src/scripts/assets/splash-background.png);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  border-radius: 10px;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.winner h1 {
+  color: yellow;
+  font-family: "Bungee", cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+.game-over {
+  width: 900px;
+  height: 600px;
+  background: #00bcf5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  border-radius: 10px;
+  padding: 0 40px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.heading {
+  width: 536px;
+  margin: 0 auto;
+}
+
+.game-over h1 {
+  color: yellow;
+  font-family: "Bungee", cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+.icons {
+  position: absolute;
+  display: flex;
+  top: 20px;
+  left: 20px;
+  width: 350px;
+  height: 110px;
+  justify-content: space-around;
+  background: #ffe4c5;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100px;
+  line-height: 100px;
+  margin-top: 5px;
+}
+
+.selected {
+  outline: 5px solid #55ff7f;
+  border-radius: 5px;
+  background: rgba(7, 160, 27, 0.473);
+}
+
+.wrong {
+  outline: 5px solid #ff5555;
+  border-radius: 5px;
+  background: rgba(160, 7, 7, 0.473);
+}
+
+.view {
+  width: inherit;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 25%;
+}
+
+.hidden {
+  display: none;
+}
+
+.current {
+  outline: 5px dashed white;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.artwork-counter {
+  width: 200px;
+  height: 50px;
+  background: white;
+  float: left;
+  box-sizing: border-box;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.countdown-timer {
+  font-size: 40px;
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  right: 20px;
+  top: 80px;
+  font-family: "Bungee", cursive;
+  background: white;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.score {
+  font-family: "Bungee", cursive;
+  font-size: 30px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  top: 10px;
+}
+
+.final-score-row {
+  font-size: 30px;
+  background-color: white;
+}
+
+.winner p {
+  color: yellow;
+}
+
+.artwork {
+  padding: 10px;
+}
+
+footer {
+  height: inherit;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+}
+
+nav {
+  height: inherit;
+  width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: #8d8d8d;
+}
+
+a:hover {
+  color: #b9b9b9;
+  cursor: pointer;
+}
+
+span {
+  position: relative;
+}
+
+i {
+  margin: 1px;
+}

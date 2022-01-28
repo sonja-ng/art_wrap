@@ -221,6 +221,11 @@ class Game  {
     const legend = document.querySelector(".legend");
     legend.classList.add("hidden");
 
+    const finalScore = document.querySelector(".final-score");
+    finalScore.classList.remove("hidden");
+
+    finalScore.innerText = `${this.score}`;
+
     document.addEventListener("keydown", (e) => {
       e.preventDefault();
       const keyName = e.key;
@@ -247,6 +252,11 @@ class Game  {
     legend.classList.add("hidden");
 
     this.removeScoreboard();
+
+    const final = document.querySelector(".final-score-winner");
+    final.classList.remove("hidden");
+
+    final.innerText = `${this.score}`;
 
     document.addEventListener("keydown", (e) => {
       e.preventDefault();
