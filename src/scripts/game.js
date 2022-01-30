@@ -26,7 +26,6 @@ class Game  {
   }
 
   addArtwork(){
-  
     for (let i = 0; i < LEVEL[this.level]; i++) {
       let art = new Artwork();
       this.artwork.push(art);
@@ -45,8 +44,7 @@ class Game  {
       const li = document.createElement("li");
       const img = document.createElement("img");
       img.src = this.artworkSrc[i];
-      img.classList.add("artwork");
-      img.classList.add("next");
+      img.classList.add("artwork", "next");
       if (i === 0) {
         img.classList.add("current");
         img.classList.remove("next");
@@ -62,11 +60,10 @@ class Game  {
     this.fresh = false;
   }
 
-  setUpScoreboard() {
-    const counter = document.querySelector(".artwork-counter");
-    counter.classList.remove("hidden");
+  showPoint(){
     const scoreCounter = document.querySelector(".score");
     scoreCounter.classList.remove("hidden");
+
     if (this.score < 2) {
       scoreCounter.innerText = `Point: ${this.score}`;
     } else {
@@ -74,13 +71,16 @@ class Game  {
     }
   }
 
+  setUpScoreboard() {
+    const counter = document.querySelector(".artwork-counter");
+    counter.classList.remove("hidden");
+    this.showPoint();
+  }
+
   removeScoreboard() {
     const counter = document.querySelector(".artwork-counter");
     counter.classList.add("hidden");
-    const scoreCounter = document.querySelector(".score");
-    scoreCounter.classList.add("hidden");
   }
-  
 
   setUpTimer(){
     this.timer = setInterval(this.timerTick.bind(this), 1000);
@@ -113,12 +113,7 @@ class Game  {
 
   addSecondWrapper(){
     this.score += 1;
-    const scoreCounter = document.querySelector(".score");
-    if (this.score < 2) {
-      scoreCounter.innerText = `Point: ${this.score}`;
-    } else {
-      scoreCounter.innerText = `Points: ${this.score}`;
-    }
+    this.showPoint();
 
     if (!this.gameOver()) {
     const art = document.querySelector(".current");
@@ -146,7 +141,6 @@ class Game  {
   
   isCorrect() { 
     const currentArtwork = this.artwork[0];
-    // debugger
     if (currentArtwork && currentArtwork.status === -1) {
       if (this.currentKey === currentArtwork.keys[0]) {
         currentArtwork.updateStatus();
@@ -172,7 +166,7 @@ class Game  {
     return false;
   }
 
-  moveUpLevel() {
+  clearArtwork(sec){
     const ul = document.querySelector("ul");
     if (ul) ul.remove();
     this.artwork = [];
@@ -180,30 +174,23 @@ class Game  {
     this.firstWrappers = [];
     this.secondWrappers = [];
     this.currentKey = "X";
-    this.second = 6;
-    
+    this.second = sec;
     this.addArtwork();
     this.draw();
   }
 
+  moveUpLevel() {
+    this.clearArtwork(6);
+  }
+
   restart() {
-    const ul = document.querySelector("ul");
-    if (ul) ul.remove();
-    this.artwork = [];
-    this.artworkSrc = [];
-    this.firstWrappers = [];
-    this.secondWrappers = [];
-    this.currentKey = "X";
     this.level = 0;
     this.score = 0;
-    this.second = 7;
     this.over = false;
 
     const legend = document.querySelector(".legend");
     legend.classList.remove("hidden");
-    
-    this.addArtwork();
-    this.draw();
+    this.clearArtwork(7);
     this.setUpTimer();
   }
 

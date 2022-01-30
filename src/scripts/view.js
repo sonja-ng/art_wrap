@@ -1,7 +1,6 @@
 import Game from './game';
 import Artwork from './artwork';
 
-
 class View  {
     constructor(game, canvas) {
         this.ctx = canvas.getContext('2d');
@@ -86,17 +85,15 @@ class View  {
       
       checkMatch(){
           if (this.game.isCorrect()) {
-              // debugger
               if (this.game.artwork[0].status === 0) {
                 this.game.addWrapper();
               } else if (this.game.artwork[0].status === 1) {
                 this.game.addSecondWrapper();
                 this.game.artwork.shift();
                 if (this.game.levelEnd()) {
-                    // debugger
                     setTimeout(this.game.moveUpLevel.bind(this.game), 450);
                 } 
-              } //below are for testing
+              } 
            } else if (this.game.currentKey === "B" && !this.game.isCorrect()) {
             const bubble = document.querySelector(".bubble");
             bubble.classList.add("wrong");
