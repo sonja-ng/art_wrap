@@ -11,6 +11,13 @@ vanilla Javascript, CSS, and HTML5.
 
 [Play here](https://sonja-ng.github.io/art_wrap/)
 
+## Technologies
+- Vanilla JavaScript DOM manipulation
+- HTML5
+- SCSS
+- Webpack
+- Babel
+
 ## Implementation
 - Check for Wrapper Match
 ```js
