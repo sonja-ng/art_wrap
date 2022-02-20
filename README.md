@@ -1,4 +1,4 @@
-# Art Wrap
+# Art Wrap | ![LIVE](https://sonja-ng.github.io/art_wrap/)
 
 ![gameplay](./wireframe/screenshot.png)
 
@@ -9,12 +9,10 @@ vanilla Javascript, CSS, and HTML5.
 - Keys include the three types of artwork (painting, framed drawing, sculpture), and the order of packaging materials that goes with each artwork type.
 - Each of the four arrow keys corresponds to a specific packaging material. They must be selected in the stated order.
 
-[Play here](https://sonja-ng.github.io/art_wrap/)
-
 ## Technologies
 - Vanilla JavaScript DOM manipulation
 - HTML5
-- SCSS
+- CSS3 / SASS
 - Webpack
 - Babel
 
@@ -43,7 +41,7 @@ vanilla Javascript, CSS, and HTML5.
 }
 ```
 
-## MVP
+## Features
 
 In this game, users will be able to:
 - start and restart game
