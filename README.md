@@ -1,6 +1,6 @@
-# Art Wrap | ![LIVE](https://sonja-ng.github.io/art_wrap/)
+# Art Wrap | [LIVE](https://sonja-ng.github.io/art_wrap/)
 
-![gameplay](./wireframe/screenshot.png)
+![gameplay](./wireframe/screenshot_cropped.jpg)
 
 Art Wrap is matching game where you play as a gallery intern who must wrap artworks with the correct materials within a time limit. The project uses 
 vanilla Javascript, CSS, and HTML5.
