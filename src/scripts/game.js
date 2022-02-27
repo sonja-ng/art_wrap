@@ -37,23 +37,24 @@ class Game  {
 
 
   draw(){
-    const image = document.querySelector(".gallery");
+    const gallery = document.querySelector(".gallery");
     const ul = document.createElement("ul");
 
     for (let i = 0; i < this.artwork.length; i++) {
       const li = document.createElement("li");
       const img = document.createElement("img");
       img.src = this.artworkSrc[i];
-      img.classList.add("artwork", "next");
+      
       if (i === 0) {
-        img.classList.add("current");
-        img.classList.remove("next");
+        img.classList.add("artwork", "current");
+      } else {
+        img.classList.add("artwork", "next");
       }
       li.append(img);
       ul.append(li);
     }
 
-    image.append(ul);
+    gallery.append(ul);
     const icons = document.querySelector(".icons");
     icons.classList.remove("hidden");
     this.setUpScoreboard();

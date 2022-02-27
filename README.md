@@ -2,8 +2,8 @@
 
 ![gameplay](./wireframe/screenshot_cropped.jpg)
 
-Art Wrap is matching game where you play as a gallery intern who must wrap artworks with the correct materials within a time limit. The project uses 
-vanilla Javascript, CSS, and HTML5.
+Art Wrap is matching game where you play as a gallery intern who must wrap artworks with the correct materials before time runs out. The project uses 
+Javascript, HTML5, and CSS3.
 
 ## Gameplay
 - Keys include the three types of artwork (painting, framed drawing, sculpture), and the order of packaging materials that goes with each artwork type.
@@ -12,33 +12,50 @@ vanilla Javascript, CSS, and HTML5.
 ## Technologies
 - Vanilla JavaScript DOM manipulation
 - HTML5
-- CSS3 / SASS
+- CSS3 / SCSS
 - Webpack
 - Babel
 
 ## Implementation
-- Check for Wrapper Match
+- The below code initializes the Game class by adding artworks to the artwork queue and rendering them onto the screen through pure JS DOM manipulation. The wrappers icons and scoreboards are also set up and made visible with CSS.
 ```js
 //game.js
-
-   isCorrect() { 
-    const currentArtwork = this.artwork[0];
-    if (currentArtwork.status === -1) {
-      if (this.currentKey === currentArtwork.keys[0]) {
-        currentArtwork.updateStatus();
-        return true;
-      } else if (this.currentKey !== currentArtwork.keys[0] && this.wrapper.includes(this.currentKey)) {
-         return false;
-      }
-    } else if (currentArtwork.status === 0) {
-      if (this.currentKey === currentArtwork.keys[1]) {
-        currentArtwork.updateStatus();
-        return true;
-      } else if (this.currentKey !== currentArtwork.keys[1] && this.wrapper.includes(this.currentKey)) {
-         return false;
-      }
+addArtwork(){
+    for (let i = 0; i < LEVEL[this.level]; i++) {
+      let art = new Artwork();
+      this.artwork.push(art);
+      this.artworkSrc.push(art.picture);
+      this.firstWrappers.push(art.firstWrapper);
+      this.secondWrappers.push(art.secondWrapper);
     }
-}
+  }
+
+
+  draw(){
+    const image = document.querySelector(".gallery");
+    const ul = document.createElement("ul");
+
+    for (let i = 0; i < this.artwork.length; i++) {
+      const li = document.createElement("li");
+      const img = document.createElement("img");
+      img.src = this.artworkSrc[i];
+      
+      if (i === 0) {
+        img.classList.add("current");
+      } else {
+        img.classList.add("artwork", "next");
+      }
+
+      li.append(img);
+      ul.append(li);
+    }
+
+    image.append(ul);
+    const icons = document.querySelector(".icons");
+    icons.classList.remove("hidden");
+    this.setUpScoreboard();
+    this.fresh = false;
+  }
 ```
 
 ## Features
@@ -51,4 +68,3 @@ In this game, users will be able to:
 
 ## Future Features
 - Add new levels with different game plays and technologies
-- Add scoring system
