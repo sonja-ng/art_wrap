@@ -17,7 +17,7 @@ class Game  {
     this.currentKey = "X";
     this.level = 0;
     this.score = 0;
-    this.second = 7;
+    this.second = 15;
     this.addArtwork()
     this.artworkCounter = 0;
     this.timer = undefined;
@@ -65,11 +65,7 @@ class Game  {
     const scoreCounter = document.querySelector(".score");
     scoreCounter.classList.remove("hidden");
 
-    if (this.score < 2) {
-      scoreCounter.innerText = `Point: ${this.score}`;
-    } else {
-      scoreCounter.innerText = `Points: ${this.score}`;
-    }
+    scoreCounter.innerText = this.score < 2 ? `Point: ${this.score}` : `Points: ${this.score}`;
   }
 
   setUpScoreboard() {
@@ -90,7 +86,7 @@ class Game  {
   timerTick(){
     const countdown = document.querySelector(".countdown-timer");
     countdown.classList.remove("hidden");
-    countdown.innerText = `0${this.second}`;
+    countdown.innerText = this.second > 9 ? `${this.second}` : `0${this.second}`;
     this.second -= 1;   
     if (this.second === -1) {
       clearInterval(this.timer);
@@ -181,7 +177,7 @@ class Game  {
   }
 
   moveUpLevel() {
-    this.clearArtwork(6);
+    this.clearArtwork(10);
   }
 
   restart() {
@@ -191,7 +187,7 @@ class Game  {
 
     const legend = document.querySelector(".legend");
     legend.classList.remove("hidden");
-    this.clearArtwork(7);
+    this.clearArtwork(15);
     this.setUpTimer();
   }
 
@@ -248,7 +244,6 @@ class Game  {
 
     document.addEventListener("keydown", (e) => {
       e.preventDefault();
-      const keyName = e.key;
       const keyCode = e.code;
       if (this.gameWon() && keyCode === 'Enter') {
         const win = document.querySelector(".winner");
